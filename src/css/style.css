@@ -62,7 +62,6 @@ ul.event-list li {
     
 
 /* ////// SPONSORS /////// */
-.sponsor-level1, .sponsor-level2 , .sponsor-level3 {float: left;}
 .sponsor-level1 img {max-width: 500px;}
 .sponsor-level2 img {max-width: 300px;}
 .sponsor-level3 img {max-width: 150px;}
