@@ -8,6 +8,11 @@ Vue.component('home', {
 
 Vue.component('events', {
     template: require("./events.html"),
+    methods: {
+        submit: function (msg, e) {
+            console.log(msg, e);
+        }
+    }
 });
 
 

@@ -16,7 +16,9 @@ window.APP = new Vue({
 })
 
 
-APP.currentScreen = window.location.hash.substring(1)
+var startView = window.location.hash.substring(1);
+if (startView.length > 2)
+    APP.currentScreen = startView;
 
 
 
