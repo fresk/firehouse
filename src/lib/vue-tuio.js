@@ -59,10 +59,9 @@ exports.install = function (Vue) {
             if(!el._iscroll){
                 el._iscroll = new IScroll(this.el, options);
             }
-            Vue.nextTick(function(){
-
+            setTimeout(function(){
                 el._iscroll.refresh();
-            });
+            }, 200);
         },
         update: function (value) {
             // do something based on the updated value
