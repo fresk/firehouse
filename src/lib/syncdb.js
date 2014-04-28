@@ -29,13 +29,6 @@ function fetchEventsAndLocations(callback){
   request(event_location_url, function(res){
     console.log("got event and venue data");
     var events = res.body.events;
-    _.each(events, function(element){
-      var cats = _.values(element.categories.categories);
-      element.categories = cats;
-      element.categories_string = _.map(cats, function(c){
-        return c.slug}).join(" ");
-    });
-    console.log(res.body.events[0]);
     callback(null, res.body);
   });
 }

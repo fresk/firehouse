@@ -1,3 +1,4 @@
+var Vue = require('underscore');
 var Vue = require('vue');
 //Vue.use(require('./lib/vue-tuio'));
 
@@ -16,6 +17,7 @@ Vue.directive('scroll', {
         // do something based on the updated value
         // this will also be called for the initial value
         console.log("update iScroll");
+        el._iscroll.refresh();
     },
     unbind: function () {
         if(this.el._iscroll){
@@ -24,6 +26,36 @@ Vue.directive('scroll', {
         }
     }
 });
+
+
+Vue.filter('category', function (value) {
+    filter_categories = _.rest(arguments);
+    this.categoryFilter;
+
+    console.log('filter', filter_categories, this.categoryFilter)
+    if (this.categoryFilter){
+     filter_categories.push(this.categoryFilter);
+    }
+
+    console.log(filter_categories);
+    if (filter_categories.length == 0)
+        return value;
+
+    return _.filter(value, function(item){
+        var item_categories = _.map(item.categories, function(i){
+            return i.slug;
+        });
+
+        var inter = _.intersection(
+            item_categories,
+            filter_categories
+        );
+
+        console.log(item_categories, filter_categories, inter);
+        return inter.length > 0
+    });
+})
+
 
 
 
@@ -38,15 +70,26 @@ window.APP = new Vue({
       'events': DB.events,
       'locations': DB.locations,
       'sponsors': DB.sponsors,
-      'event': null
+      'currentEvent': {},
+      'categoryFilter': "",
     },
 
     methods: {
         showEvent: function(event){
-            APP.event = event;
+            APP.currentEvent = event;
             APP.currentScreen = 'event-detail';
+        },
 
-
+        filterEvents: function(category){
+            if (category == "" || category == "all" || !category){
+                APP.events = DB.events;
+                return;
+            }
+            APP.events = _.filter(DB.events, function(item){
+                var it = _.pluck(item.categories, 'slug');
+                return _.contains(it, category)
+            });
+            updateScrollers();
         }
     }
 
@@ -60,7 +103,26 @@ if (startView.length > 2)
 
 
 
+function updateScrollers(){
+    walkTheDOM(document, function(node){
+        if (node._iscroll){
+            setTimeout(function(){
+                console.log("updateng a scroller");
+                node._iscroll.refresh();
+            }, 500);
+        }
+    })
+}
 
+
+function walkTheDOM(node, func) {
+    func(node);
+    node = node.firstChild;
+    while (node) {
+        walkTheDOM(node, func);
+        node = node.nextSibling;
+    }
+}
 
 
 

@@ -1,24 +1,24 @@
 <div >
 <button class="backtohome" v-on="click: currentScreen = 'home'">&#9776;</button>
 
-<div class="event-filter-wrap">
-<button class="dropdown-arrow"></button>
-	<ul class="event-filters">
+<div v-component='dropdown' class="event-filter-wrap">
+  <button class="dropdown-arrow" v-on="click: show = !show"></button>
+   <ul class="event-filters" v-if="show" v-transition>
 		<li class="active"><a class="bytime" href="#">Today</a></li>
 		<li><a class="bytime" href="#">This Week</a></li>
 		<li><a class="bytime" href="#">This Month</a></li>
 		
-		<li><a class="circus" href="#">Circus</a></li>
-		<li><a class="culinary" href="#">Culinary</a></li>
-		<li><a class="dance" href="#">Dance</a></li>
-		<li><a class="education" href="#">Education</a></li>
-		<li><a class="film" href="#">Film</a></li>
-		<li><a class="kids" href="#">Kids</a></li>
-		<li><a class="literary" href="#">Literary</a></li>
-		<li><a class="music" href="#">Music</a></li>
-		<li><a class="social" href="#">Social</a></li>
-		<li><a class="theater" href="#">Theater</a></li>
-		<li><a class="visualart" href="#">Visual Art</a></li>
+		<li><a v-on="click: setFilter('circus')" class="circus" href="#">Circus</a></li>
+		<li><a v-on="click: setFilter('culinary')" class="culinary" href="#">Culinary</a></li>
+		<li><a v-on="click: setFilter('dance')" class="dance" href="#">Dance</a></li>
+		<li><a v-on="click: setFilter('education')" class="education" href="#">Education</a></li>
+		<li><a v-on="click: setFilter('film')" class="film" href="#">Film</a></li>
+		<li><a v-on="click: setFilter('kids')" class="kids" href="#">Kids</a></li>
+		<li><a v-on="click: setFilter('literary')" class="literary" href="#">Literary</a></li>
+		<li><a v-on="click: setFilter('music')" class="music" href="#">Music</a></li>
+		<li><a v-on="click: setFilter('social')" class="social" href="#">Social</a></li>
+		<li><a v-on="click: setFilter('theater')" class="theater" href="#">Theater</a></li>
+		<li><a v-on="click: setFilter('class')" class="visualart" href="#">Visual Art</a></li>
 	</ul>
 </div>
 

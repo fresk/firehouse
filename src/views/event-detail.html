@@ -2,18 +2,18 @@
   <button class="backtohome" v-on="click: currentScreen = 'home'">&#9776;</button>
   <div class="app-screen" v-scroll>
 
-    <div class="event-detail" >
-      <h2 class="name">{{event.name}}</h2>
+    <div v-component v-with="currentEvent" >
+      <h2 class="name">{{name}}</h2>
         <div class="categories" v-repeat="categories">
-          <div class="category category-{{event.slug}}">{{event.name}}</div>
+          <div class="category category-{{slug}}">{{name}}</div>
         </div>
-      <div class="location">{{event.start_time}}</div>
-      <div class="start_date">{{event.start_time}}</div>
-      <div class="end_date">{{event.start_time}}</div>
-      <div class="start_time">{{event.start_time}}</div>
-      <div class="end_time">{{event.start_time}}</div>
+      <div class="location">{{start_time}}</div>
+      <div class="start_date">{{start_time}}</div>
+      <div class="end_date">{{start_time}}</div>
+      <div class="start_time">{{start_time}}</div>
+      <div class="end_time">{{start_time}}</div>
       <div class="content">
-        <p>{{event.content}}</p>
+        <p>{{content}}</p>
       </div>
     </div>
 

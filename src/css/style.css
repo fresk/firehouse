@@ -44,7 +44,6 @@ body {
     width: 1080px;
     height: 1920px;
     overflow: hidden;
-    z-index: 1000;
 }          
 
 .app-screen {
@@ -52,10 +51,7 @@ body {
     width: 1080px;
     height: 1920px;
     overflow: hidden;
-    z-index: 1000;
 }
-
-
 
 
 body {
@@ -142,8 +138,14 @@ button.backtohome {width: 150px; height: 150px; text-align: center; position: fi
     border: none;
 }
 
+
+
+
+
 ul.event-filters {
-    display: none;
+    -webkit-transition: all 1s;
+    -webkit-transform: translateY(0);
+    z-index: 9999;
     list-style: none; 
     background: #111;
     padding: 0; 
@@ -151,6 +153,17 @@ ul.event-filters {
     position: absolute; 
     top:240px;
 }
+
+ul.event-filters.v-leave{
+    -webkit-transform: translateY(-1920px);
+} 
+ul.event-filters.v-enter{
+    -webkit-transform: translateY(-1920px);
+}
+
+
+
+
 ul.event-filters li {
     float: left; 
     width: 540px;

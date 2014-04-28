@@ -1,5 +1,20 @@
 var Vue = require('vue');
 
+Vue.component('dropdown', {
+    data: {
+        'show' : false
+    },
+
+    methods: {
+        setFilter: function(filter){
+            APP.filterEvents(filter);
+            this.show = false;
+        }
+
+    }
+});
+
+
 
 Vue.component('home', {
     template: require("./home.html"),
@@ -7,8 +22,10 @@ Vue.component('home', {
 
 
 Vue.component('events', {
+    ready: function(){
+        APP.filterEvents();
+    },
     template: require("./events.html"),
-
 });
 
 Vue.component('event-detail', {
@@ -17,6 +34,9 @@ Vue.component('event-detail', {
 
 
 Vue.component('featured', {
+    ready: function(){
+        APP.filterEvents('featured-event') ;
+    },
     template: require("./featured.html"),
 });
 

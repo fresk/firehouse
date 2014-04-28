@@ -4,8 +4,8 @@
 
 <div class="app-screen" v-scroll>
  <ul class="event-list">
-  <li v-repeat="events | filterBy 'featured-event'" v-on="tap: showEvent(this)">
-    {{name}}
+  <li v-repeat="events" v-on="tap: showEvent(this)">
+    Name: {{name}}
   </li>
  </ul>
 
