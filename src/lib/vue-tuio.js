@@ -50,17 +50,19 @@ exports.install = function (Vue) {
     });
 
 
-
+                        /*
     Vue.directive('scroll', {
         bind: function () {
+            return;
             var el = this.el;
-            var options = {'tap': 'itemTap', click:true};
+            var options = {'tap': true};
             if(!el._iscroll){
                 el._iscroll = new IScroll(this.el, options);
             }
             setTimeout(function(){
                 el._iscroll.refresh();
-            }, 500);
+                console.log("refresh")
+            }, 2000);
         },
         update: function (value) {
             // do something based on the updated value
@@ -74,6 +76,6 @@ exports.install = function (Vue) {
             }
         }
     });
-
+              */
 
 }
