@@ -57,14 +57,28 @@ body {
 
 
 body {
-    background: #111; 
-    overflow-x: hidden;
-    font-family: 'proxima-nova', "Helvetica Neue", "Helvetica", Arial, sans-serif;
-    padding: 0;
-    margin: 0;
-}
+	background: #111; 
+	color:#ebebeb;
+	overflow-x: hidden;
+	font-family: 'proxima-nova', "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+	}
+
+h1,h2,h3,h4,h5,h6 {color: #ebebeb; padding: 0; margin: 0;}
+h1 {font-size: 6em; text-align: right; font-weight: 400; text-transform: uppercase;}
+h4 {font-size: 2.5em; text-align: left; padding: 0.8em 0 0.2em 0; font-weight: 400;}
+
+p {}
+p.large {font-size: 2.5em; padding: 0; margin: 0; line-height: 0.9em;}
+
+a {color: #eb5f7d; text-decoration: none;}
+a:hover {color: #fff;text-decoration: none;}
 
 button, a {outline: none;}
+
+.page-header {width: 1000px; height: 140px; padding: 60px 40px 40px 40px; background: rgba(0,0,0,0.8); position: fixed; top:0;}
+.page-content {padding: 50px; font-size: 1.6em; line-height: 1.6em; margin-top: 240px;}
 
 #logo {position: fixed; top: 20px; left: 20px;}
 
@@ -157,12 +171,14 @@ ul.event-filters li a {
 
 
 ul.event-list {color: #ebebeb; padding: 0; margin: 0;}
+
 ul.event-list li {
     list-style: none;
-    width: 1000px;
-    height: 209px; 
-    margin: 0 0 1px 0; 
-    padding:30px 40px 0 40px;
+    width: 1080px;
+    height: 239px; 
+    border-bottom: 1px solid #eb5f7d;
+    margin: 0; 
+    padding: 50px !important;
     background: #666;
     z-index: 9998;
     text-align: right;
@@ -172,9 +188,11 @@ ul.event-list li {
 
 
 /* ////// SPONSORS /////// */
+ul.sponsors {list-style: none; border-bottom: 1px solid #666; float: left; margin: 0; padding: 40px;}
+ul.sponsors li {float: left;}
 .sponsor-level1 img {max-width: 500px;}
-.sponsor-level2 img {max-width: 300px;}
-.sponsor-level3 img {max-width: 150px;}
+.sponsor-level2 img {max-width: 350px;}
+.sponsor-level3 img {max-width: 300px;}
 
 /* ////// MAP/SPACES /////// */
 .spacewrap {float: right; clear: both;}
