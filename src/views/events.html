@@ -2,7 +2,7 @@
 <button class="backtohome" v-touch="tap: currentScreen = 'home'">&#9776;</button>
 
  <ul>
-  <li v-repeat="events">
+  <li v-repeat="events" v-on="tap: currentScreen = 'featured'">
     {{event_name}}
   </li>
  </ul>
