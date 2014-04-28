@@ -44,6 +44,7 @@ body {
     width: 1080px;
     height: 1920px;
     overflow: hidden;
+    z-index: 1000;
 }          
 
 .app-screen {
@@ -51,20 +52,36 @@ body {
     width: 1080px;
     height: 1920px;
     overflow: hidden;
+    z-index: 1000;
 }
 
 
 
 
 body {
-    background: #111; 
-    overflow-x: hidden;
-    font-family: 'proxima-nova', "Helvetica Neue", "Helvetica", Arial, sans-serif;
-    padding: 0;
-    margin: 0;
-}
+	background: #111; 
+	color:#ebebeb;
+	overflow-x: hidden;
+	font-family: 'proxima-nova', "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+	}
+
+h1,h2,h3,h4,h5,h6 {color: #ebebeb; padding: 0; margin: 0;}
+h1 {font-size: 6em; text-align: right; font-weight: 400; text-transform: uppercase;}
+h4 {font-size: 2.5em; text-align: left; padding: 0.8em 0 0.2em 0; font-weight: 400;}
+
+p {}
+p.large {font-size: 2.5em; padding: 0; margin: 0; line-height: 0.9em;}
+
+a {color: #eb5f7d; text-decoration: none;}
+a:hover {color: #fff;text-decoration: none;}
 
 button, a {outline: none;}
+
+.page-header {width: 1080px; height: 240px; padding: 0; background: rgba(0,0,0,0.8); position: fixed; top:0;z-index: 9998;}
+.page-header h1 {padding: 50px; font-size: 3em;}
+.page-content {padding: 240px 40px 40px 40px; font-size: 1.6em; line-height: 1.6em; width: 1080px; float: left;}
 
 #logo {position: fixed; top: 20px; left: 20px;}
 
@@ -157,12 +174,14 @@ ul.event-filters li a {
 
 
 ul.event-list {color: #ebebeb; padding: 0; margin: 0;}
+
 ul.event-list li {
     list-style: none;
-    width: 1000px;
-    height: 209px; 
-    margin: 0 0 1px 0; 
-    padding:30px 40px 0 40px;
+    width: 1080px;
+    height: 239px; 
+    border-bottom: 1px solid #eb5f7d;
+    margin: 0; 
+    padding: 50px !important;
     background: #666;
     z-index: 9998;
     text-align: right;
@@ -172,9 +191,11 @@ ul.event-list li {
 
 
 /* ////// SPONSORS /////// */
+ul.sponsors {list-style: none; border-bottom: 1px solid #666; float: left; margin: 0; padding: 40px;}
+ul.sponsors li {float: left;}
 .sponsor-level1 img {max-width: 500px;}
-.sponsor-level2 img {max-width: 300px;}
-.sponsor-level3 img {max-width: 150px;}
+.sponsor-level2 img {max-width: 350px;}
+.sponsor-level3 img {max-width: 300px;}
 
 /* ////// MAP/SPACES /////// */
 .spacewrap {float: right; clear: both;}
@@ -182,7 +203,8 @@ ul.event-list li {
 
 
 
-/* DISCPLINE COLORS */
+
+/* ////// DISCPLINE COLORS /////// */
 .visualart {background: #35b6c2;}
 .music {background: #cd4339;}
 .film {background: #f1e74d;}
@@ -194,3 +216,50 @@ ul.event-list li {
 .dance {background: #a65667;}
 .circus {background: #6957a0;}
 .education {background:#a3d39d;}
+
+
+/* ////// ANIMATIONS /////// */
+@-webkit-keyframes STAR-MOVE {
+	from {
+		background-position: 5% 5%
+	}
+	to { 
+		background-position: 1300% 600%
+	}
+}
+
+#background {
+	background: black url(/img/background.png) repeat 5% 5%;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 1;
+	
+	-webkit-animation-name: STAR-MOVE;
+	-webkit-animation-duration: 200s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+}
+
+#midground {
+	background: url(/img/midground.png) repeat 20% 20%;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 2;
+	
+	-webkit-animation-name: STAR-MOVE;
+	-webkit-animation-duration: 150s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+}
+
+#foreground {
+	background: url(/img/foreground.png) repeat 35% 35%;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 3;
+	
+	-webkit-animation-name: STAR-MOVE;
+	-webkit-animation-duration: 100s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+}

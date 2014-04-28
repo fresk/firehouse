@@ -1,16 +1,13 @@
 <div>
-  
+<button class="backtohome" v-on="click: currentScreen = 'about'">&#9776;</button>
 
-<button class="backtohome" v-on="click: currentScreen = 'home'">&#9776;</button>
+<div class="page-header">
+<h1>Rentals</h1>
+</div>
 
-		<div class="page-header">
-			<h1>Rentals</h1>
-		</div>
-			
-		<div class="page-content">
-		
-			
-			<p class="large"> Rent space at the Des Moines Social Club for your next event, class, or meeting.</p>
+<div class="app-screen" v-scroll>
+	<div class="page-content">
+		<p class="large"> Rent space at the Des Moines Social Club for your next event, class, or meeting.</p>
 			
 			<h4>HANDBALL COURT</h4>
 			The newly restored Handball Court is ideally suited to small parties and meetings. Originally built as a Handball Court in 1938, the space has natural lighting, original wood ﬂoors and tall ceilings, giving the room an open spacious feel. This space is also suited to performances or wedding ceremonies with up to 84 attendees.
@@ -48,8 +45,7 @@
 			
 			One time Event – Up to 24 hours: $1,250 plus staffing and optional equipment/amenities
 			Screen Usage: $150 plus optional tech staffing
-		</div>
+	</div><!-- ///// end.page-content////// -->
+</div><!-- ///// end.app-screen////// -->
 
-</div>                                  
- 
- 
+</div>   
