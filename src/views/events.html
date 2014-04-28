@@ -1,8 +1,11 @@
 <div>
 <button class="backtohome" v-touch="tap: currentScreen = 'home'">&#9776;</button>
 
-  <h1>Events</h1>
-
+ <ul>
+  <li v-repeat="events">
+    {{event_name}}
+  </li>
+ </ul>
 
 </div>                                  
  

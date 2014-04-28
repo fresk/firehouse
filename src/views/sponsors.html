@@ -1,9 +1,35 @@
-<div>
-<button class="backtohome" v-touch="tap: currentScreen = 'about'">&#9776;</button>
+<div class="app-screen" v-scroll>
+
+  <div>
+  <button class="backtohome" v-touch="tap: currentScreen = 'about'">&#9776;</button>
 
   <h1>Sponsors</h1>
 
+  <h2>Level 1</h2>
+  <ul>
+    <li  class="sponsor-level1" v-repeat="sponsors | filterBy 'level1'">
+      <h3>{{name}}</h3>
+      <img src="{{image}}" alt="{{name}}">
+    </li>
+  </ul>
 
+  <h2>Level 2</h2>
+  <ul>
+    <li  class="sponsor-level2" v-repeat="sponsors | filterBy 'level2'">
+      <h3>{{name}}</h3>
+      <img src="{{image}}" alt="{{name}}">
+    </li>
+  </ul>            
+
+  <h2>Level 3</h2>
+  <ul>
+    <li  class="sponsor-level3" v-repeat="sponsors | filterBy 'level3'">
+      <h3>{{name}}</h3>
+      <img src="{{image}}" alt="{{name}}">
+    </li>
+  </ul>            
+
+  </div>
 </div>                                  
- 
+
 
