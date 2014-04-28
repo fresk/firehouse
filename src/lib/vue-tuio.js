@@ -55,7 +55,7 @@ exports.install = function (Vue) {
     Vue.directive('scroll', {
         bind: function () {
             var el = this.el;
-            var options = {'tap': true};
+            var options = {'tap': 'itemTap'};
             if(!el._iscroll){
                 el._iscroll = new IScroll(this.el, options);
             }
