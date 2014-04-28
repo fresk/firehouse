@@ -40,13 +40,6 @@ window.APP = new Vue({
       sponsors: DB.sponsors
     },
 
-    methods: {
-        showEvent: function (item) {
-            console.log(item);
-            APP.currentScreen = 'event-detail';
-        }
-    }
-
 
 
 })

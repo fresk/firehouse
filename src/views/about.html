@@ -1,14 +1,12 @@
 <div>           
- 
 
-
-<button class="backtohome" v-touch="tap: currentScreen = 'home'">&#9776;</button>
+  <button class="backtohome" v-on="click: currentScreen = 'home'">&#9776;</button>
 
  
   <ul class="menu">
-    <li><button v-touch="tap: currentScreen = 'sponsors'">Sponsors</button></li>
-    <li><button v-touch="tap: currentScreen = 'map'">Map</button></li>
-    <li><button v-touch="tap: currentScreen = 'rentals'">Rentals</button></li>
+    <li><button v-on="click: currentScreen = 'sponsors'">Sponsors</button></li>
+    <li><button v-on="click: currentScreen = 'map'">Map</button></li>
+    <li><button v-on="click: currentScreen = 'rentals'">Rentals</button></li>
 
   </ul>
 </div>                                  
