@@ -1,3 +1,5 @@
+body {background: #111;}
+
 
 ul.menu {
     list-style: none;
@@ -31,3 +33,6 @@ ul.menu li button {
     font-family:HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     padding:0 80px;
 }
+
+
+button.backtohome {width: 150px; height: 150px; text-align: center; position: fixed; top:20px; left:20px; font-size: 5em; z-index: 9999; border: none; color: #ebebeb; font-weight: 200; text-transform: uppercase; margin: 0; padding: 0;background-color: rgba(0,0,0,0.9);}
