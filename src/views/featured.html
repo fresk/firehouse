@@ -1,7 +1,22 @@
-<div>
+<div >
 <button class="backtohome" v-on="click: currentScreen = 'home'">&#9776;</button>
 
-<h1>Featured</h1>
-  
-</div>                                  
+
+<div class="app-screen" v-scroll>
+ <ul class="event-list">
+  <li v-repeat="events | filterBy 'featured-event'" v-on="tap: showEvent(this)">
+    {{event_name}}
+  </li>
+ </ul>
+
+ </div>
+
+</div>   
+
+
  
+
+                        
+ 
+
+

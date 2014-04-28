@@ -34,12 +34,21 @@ window.DB = require("./db.json");
 window.APP = new Vue({
     el: '#app',
     data: {
-      currentScreen: 'home',
-      events: DB.events,
-      locations: DB.locations,
-      sponsors: DB.sponsors
+      'currentScreen': 'home',
+      'events': DB.events,
+      'locations': DB.locations,
+      'sponsors': DB.sponsors,
+      'event': null
     },
 
+    methods: {
+        showEvent: function(event){
+            APP.event = event;
+            APP.currentScreen = 'event-detail';
+
+
+        }
+    }
 
 
 })

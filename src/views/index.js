@@ -1,9 +1,6 @@
 var Vue = require('vue');
 
 
-
-
-
 Vue.component('home', {
     template: require("./home.html"),
 });
@@ -11,6 +8,11 @@ Vue.component('home', {
 
 Vue.component('events', {
     template: require("./events.html"),
+
+});
+
+Vue.component('event-detail', {
+    template: require("./event-detail.html"),
 });
 
 
