@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="985px"
+	 height="500px" viewBox="0 0 985 500" enable-background="new 0 0 985 500" xml:space="preserve">
+<defs>
+	<script  xlink:href="svg.js"  language="JavaScript">
+	</script>
+</defs>
+<g id="Layer_3">
+	
+		<rect x="769" y="221" onclick="clickHandball()" onmouseover="showHandball();evt.target.setAttribute('opacity', '1.0')" onmouseout="resetOpacity();evt.target.setAttribute('opacity', '0.5')" opacity="0.3" fill="#F86353" width="65" height="129"/>
+	
+		<polygon onclick="clickOffices()" onmouseover="showOffices();evt.target.setAttribute('opacity', '1.0')" onmouseout="resetOpacity();evt.target.setAttribute('opacity', '0.5')" opacity="0.3" fill="#C4E04B" points="
+		923,331 866,331 866,222 870,222 870,128 866,128 866,63 923,63 	"/>
+	
+		<polygon onclick="clickStudio()" onmouseover="showStudio();evt.target.setAttribute('opacity', '1.0')" onmouseout="resetOpacity();evt.target.setAttribute('opacity', '0.5')" opacity="0.3" fill="#F1DF49" points="
+		806,63 806,110 826,110 826,137 857,137 857,127 866,127 866,63 	"/>
+	
+		<polygon onclick="clickClassrooms()" onmouseover="showClassrooms();evt.target.setAttribute('opacity', '1.0')" onmouseout="resetOpacity();evt.target.setAttribute('opacity', '0.5')" opacity="0.3" fill="#F6B242" points="
+		660,63 660,205 812,205 812,125 807,125 807,63 	"/>
+	
+		<polygon onclick="clickCulinary()" onmouseover="showCulinary();evt.target.setAttribute('opacity', '1.0')" onmouseout="resetOpacity();evt.target.setAttribute('opacity', '0.5')" opacity="0.3" fill="#C98BE3" points="
+		660,286 526,286 526,426 710,426 710,371 685,371 685,314 660,314 	"/>
+	
+		<rect x="61" y="121" onclick="clickBar()" onmouseover="showBar();evt.target.setAttribute('opacity', '1.0')" onmouseout="resetOpacity();evt.target.setAttribute('opacity', '0.5')" opacity="0.3" fill="#54ACFB" width="164" height="221"/>
+	
+		<path onclick="clickOffices()" onmouseover="showOffices();evt.target.setAttribute('opacity', '1.0')" onmouseout="resetOpacity();evt.target.setAttribute('opacity', '0.5')" opacity="0.3" fill="#C4E04B" d="
+		M749,426v-60h59v4h115l-0.329,34.5c0,0-3.671,21.5-22.171,21.5H749z"/>
+</g>
+<g id="Layer_2">
+	<path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M660,63v223H526v140h374.5
+		c0,0,22.5-1.475,22.5-26.487V63H660z"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="806.5" y1="62" x2="806.5" y2="110"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="660,124.5 812.5,124.5 812.5,204.5 793,204.5 	"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="784" y1="204.5" x2="709" y2="204.5"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="737.5" y1="124" x2="737.5" y2="204"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="866.5,62 866.5,112.5 902,112.5 	"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="924" y1="125.5" x2="902" y2="125.5"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="891" y1="127.5" x2="858" y2="127.5"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="870.5" y1="128" x2="870.5" y2="210"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="871" y1="204.5" x2="852" y2="204.5"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="843,204.5 826.5,204.5 826.5,122 	"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="857.5,127 857.5,136.5 827,136.5 	"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="807,109.5 826.5,109.5 826.5,112 	"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="924" y1="220.5" x2="897" y2="220.5"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="886,221.5 866.5,221.5 866.5,244 	"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="866.5" y1="254" x2="866.5" y2="317"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="867" y1="299.5" x2="888" y2="299.5"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="924" y1="299.5" x2="898" y2="299.5"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="923" y1="330.5" x2="869" y2="330.5"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="769.5" y1="268" x2="769.5" y2="334"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="769.5,343 769.5,349.5 834.5,349.5 834.5,220.5 
+		769.5,220.5 769.5,259 	"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="924" y1="370.5" x2="908" y2="370.5"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="899" y1="370.5" x2="881" y2="370.5"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="872,370.5 866.5,370.5 866.5,413.5 835.5,413.5 835.5,370 	
+		"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="808,365.5 768.5,365.5 768.5,385.5 783,385.5 	"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="792.5" y1="384" x2="792.5" y2="425"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="806.5" y1="374" x2="806.5" y2="384"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="762,365.5 749.5,365.5 749.5,425 	"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="710.5,426 710.5,370.5 736.5,370.5 687,370.5 	"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="685.5,350 685.5,313.5 660.5,313.5 660.5,204.5 699,204.5 	
+		"/>
+	<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M661,63"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="661" y1="221.5" x2="688" y2="221.5"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="697,220.5 750.5,220.5 750.5,284 	"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="750.5,295 750.5,325.5 731.5,325.5 731.5,350.5 
+		709.5,350.5 709.5,313.5 709.345,313.5 685,313.5 	"/>
+	<polygon fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" points="61,121 225,121 225,423 188,423 188,427 
+		61,427 	"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="82,341.5 145.5,341.5 145.5,369 	"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="146,382.5 80.5,382.5 80.5,356.5 131,356.5 	"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="750" y1="250.5" x2="660" y2="250.5"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="660,273.5 694.5,273.5 694.5,280 	"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="694.5" y1="303" x2="694.5" y2="313"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="751" y1="283.5" x2="714" y2="283.5"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" points="661,199 648,199 648,274 528,274 	"/>
+	<rect x="59" y="63" fill="none" width="438.594" height="62.112"/>
+	<text transform="matrix(1 0 0 1 59 88.7037)" fill="#FFFFFF" font-family="'HelveticaNeueLTStd-LtCn'" font-size="36">SECOND FLOOR</text>
+</g>
+</svg>

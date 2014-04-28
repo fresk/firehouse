@@ -1,18 +1,21 @@
-body {background: #111;}
+body {background: #111; font-family: 'proxima-nova', "Helvetica Neue", "Helvetica", Arial, sans-serif;}
 
-#logo {margin: 20px;}
+#logo {position: fixed; top: 20px; left: 20px;}
 
 ul.menu {
     list-style: none;
     margin: 0;
     padding: 0;  
+    margin-top: 500px; 
 }
 
 
 ul.menu li {
     list-style: none;
     width: 1080px;
-    height: 239px;  
+    height: 239px; 
+    margin-bottom: 10px;
+    
 
 }
 
@@ -31,9 +34,12 @@ ul.menu li button {
     text-transform:uppercase;
     float:right;
     font-weight:100;
-    font-family:HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     padding:0 80px;
 }
 
 
 button.backtohome {width: 150px; height: 150px; text-align: center; position: fixed; top:20px; left:20px; font-size: 5em; z-index: 9999; border: none; color: #ebebeb; font-weight: 200; text-transform: uppercase; margin: 0; padding: 0;background-color: rgba(0,0,0,0.9);}
+
+
+.spacewrap {float: right; clear: both;}
+.spacewrap.first {margin-top: 150px;}
