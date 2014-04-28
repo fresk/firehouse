@@ -1,6 +1,9 @@
 var Vue = require('vue');
 
 
+
+
+
 Vue.component('home', {
     template: require("./home.html"),
 });
@@ -8,11 +11,6 @@ Vue.component('home', {
 
 Vue.component('events', {
     template: require("./events.html"),
-    methods: {
-        submit: function (msg, e) {
-            console.log(msg, e);
-        }
-    }
 });
 
 

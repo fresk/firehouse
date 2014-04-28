@@ -1,5 +1,5 @@
-<div>
-<button class="backtohome" v-touch="tap: currentScreen = 'home'">&#9776;</button>
+<div >
+<button class="backtohome" v-on="click: currentScreen = 'home'">&#9776;</button>
 
 <div class="event-filter-wrap">
 <button class="dropdown-arrow"></button>
@@ -22,11 +22,15 @@
 	</ul>
 </div>
 
+
+<div class="app-screen" v-scroll>
  <ul class="event-list">
-  <li v-repeat="events" v-on="itemTap: submit('hello!', $event)">
+  <li v-repeat="events" v-on="tap: showEvent(this)">
     {{event_name}}
   </li>
  </ul>
+
+ </div>
 
 </div>   
 

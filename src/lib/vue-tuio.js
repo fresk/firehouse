@@ -1,4 +1,5 @@
 var Hammer = require('hammerjs');
+var IScroll = require('iscroll');
 
 
 function inIframe () {
@@ -50,32 +51,5 @@ exports.install = function (Vue) {
     });
 
 
-                        /*
-    Vue.directive('scroll', {
-        bind: function () {
-            return;
-            var el = this.el;
-            var options = {'tap': true};
-            if(!el._iscroll){
-                el._iscroll = new IScroll(this.el, options);
-            }
-            setTimeout(function(){
-                el._iscroll.refresh();
-                console.log("refresh")
-            }, 2000);
-        },
-        update: function (value) {
-            // do something based on the updated value
-            // this will also be called for the initial value
-            console.log("update iScroll");
-        },
-        unbind: function () {
-            if(this.el._iscroll){
-                this.el._iscroll.destroy();
-                this.el._iscroll = null;
-            }
-        }
-    });
-              */
 
 }
