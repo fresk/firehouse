@@ -1,20 +1,38 @@
 <div>
-  <button class="backtohome" v-on="click: currentScreen = 'home'">&#9776;</button>
+  <button class="backtohome" v-on="click: currentScreen = 'events'">&#9776;</button>
   <div class="app-screen" v-scroll>
 
-    <div v-component v-with="currentEvent" >
+    <div v-component v-with="currentEvent" class="{{categories[0].slug}}">
+   
+    
+   
+    
+    <div class="event-single-content">
+    <div class="event-single-content-inner">
       <h2 class="name">{{name}}</h2>
-        <div class="categories" v-repeat="categories">
-          <div class="category category-{{slug}}">{{name}}</div>
-        </div>
-      <div class="location">{{start_time}}</div>
-      <div class="start_date">{{start_time}}</div>
-      <div class="end_date">{{start_time}}</div>
-      <div class="start_time">{{start_time}}</div>
-      <div class="end_time">{{start_time}}</div>
-      <div class="content">
-        <p>{{content}}</p>
+      
+	  <!--<ul class="event-single-categories" v-repeat="categories">
+	    <li class="category-{{slug}}">{{name}}</li>
+	  </ul>-->
+      <ul class="event-single-info">
+      	
+	  	<li class="start_date">{{start_date}}</li>
+	  	<li>&bull;</li>
+	  	<!--<div class="end_date">{{end_date}}</div>-->
+	  	<li class="event-single-times">{{start_time}} <!--- {{end_time}}--></li>
+	  	<li>&bull;</li>
+	  	<li class="location">{{location.name}}</li>
+	  </ul>
+      <div class="event-content">
+        <p>{{{content}}}</p>
       </div>
+    </div> <!-- // end .event-single-content // --> 
+    </div> <!-- // end .event-single-content-inner // --> 
+       
+   
+   
+    
+    
     </div>
 
   </div>
