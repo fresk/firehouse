@@ -16,6 +16,9 @@ window.APP = new Vue({
 })
 
 
+APP.currentScreen = window.location.hash.substring(1)
+
+
 
 
 
