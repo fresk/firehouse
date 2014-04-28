@@ -108,7 +108,7 @@ gulp.task('images', function(){
 gulp.task('connect', function() {
   connect.server({
     root: 'dist',
-    port: 3000,
+    port: 7000,
     livereload: true
   });
 });
