@@ -1,6 +1,11 @@
-body {background: #111; font-family: 'proxima-nova', "Helvetica Neue", "Helvetica", Arial, sans-serif;}
+body {
+	background: #111; 
+	overflow-x: hidden;
+	font-family: 'proxima-nova', "Helvetica Neue", "Helvetica", Arial, sans-serif;}
 
 #logo {position: fixed; top: 20px; left: 20px;}
+
+
 
 ul.menu {
     list-style: none;
@@ -41,5 +46,27 @@ ul.menu li button {
 button.backtohome {width: 150px; height: 150px; text-align: center; position: fixed; top:20px; left:20px; font-size: 5em; z-index: 9999; border: none; color: #ebebeb; font-weight: 200; text-transform: uppercase; margin: 0; padding: 0;background-color: rgba(0,0,0,0.9);}
 
 
+/* ////// EVENTS /////// */
+ul.event-list {color: #ebebeb; padding: 0; margin: 0;}
+ul.event-list li {
+	list-style: none;
+    width: 1000px;
+    height: 239px; 
+    margin: 0 0 1px 0; 
+    padding:40px;
+    background: #666;
+    
+    text-align: right;
+    font-size: 4em;
+    }
+    
+
+/* ////// SPONSORS /////// */
+.sponsor-level1, .sponsor-level2 , .sponsor-level3 {float: left;}
+.sponsor-level1 img {max-width: 500px;}
+.sponsor-level2 img {max-width: 300px;}
+.sponsor-level3 img {max-width: 150px;}
+
+/* ////// MAP/SPACES /////// */
 .spacewrap {float: right; clear: both;}
 .spacewrap.first {margin-top: 150px;}
