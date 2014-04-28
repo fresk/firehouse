@@ -1,7 +1,12 @@
 body {
 	background: #111; 
 	overflow-x: hidden;
-	font-family: 'proxima-nova', "Helvetica Neue", "Helvetica", Arial, sans-serif;}
+	font-family: 'proxima-nova', "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+	}
+
+button, a {outline: none;}
 
 #logo {position: fixed; top: 20px; left: 20px;}
 
@@ -47,18 +52,65 @@ button.backtohome {width: 150px; height: 150px; text-align: center; position: fi
 
 
 /* ////// EVENTS /////// */
+
+.event-filter-wrap {width: 1080px; height: 239px; border-bottom: 1px solid red; background: #111;}
+
+.dropdown-arrow {
+	background-color: none;
+	background: url('/img/dropdown-arrow.png');
+	background-size: contain;
+	position: absolute;
+	top:50px;
+	right: 50px;
+	width: 100px;
+	height: 100px;
+	border: none;
+	}
+
+ul.event-filters {
+	display: none;
+	list-style: none; 
+	background: #111;
+	padding: 0; 
+	margin: 0; 
+	position: absolute; 
+	top:240px;
+	}
+ul.event-filters li {
+	float: left; 
+	width: 540px;
+	height: 240px;
+	margin: 0; 
+	padding: 0;
+	text-align: left;
+	}
+
+ul.event-filters li a {
+	height: 140px;
+	display: block;
+	color: #fff;
+    padding:80px 20px 20px 20px;
+    margin: 0;
+    z-index: 9999;
+    text-align: center;
+    font-size: 4em;
+    text-decoration: none;
+    }
+
+
 ul.event-list {color: #ebebeb; padding: 0; margin: 0;}
 ul.event-list li {
 	list-style: none;
     width: 1000px;
-    height: 239px; 
+    height: 209px; 
     margin: 0 0 1px 0; 
-    padding:40px;
+    padding:30px 40px 0 40px;
     background: #666;
-    
+    z-index: 9998;
     text-align: right;
     font-size: 4em;
     }
+ 
     
 
 /* ////// SPONSORS /////// */
@@ -69,3 +121,18 @@ ul.event-list li {
 /* ////// MAP/SPACES /////// */
 .spacewrap {float: right; clear: both;}
 .spacewrap.first {margin-top: 150px;}
+
+
+
+/* DISCPLINE COLORS */
+.visualart {background: #35b6c2;}
+.music {background: #cd4339;}
+.film {background: #f1e74d;}
+.literary {background: #194b74;}
+.theater {background: #89c357;}
+.culinary {background: #fdd372;}
+.social {background: #f68139;}
+.kids {background: #96d6d2;}
+.dance {background: #a65667;}
+.circus {background: #6957a0;}
+.education {background:#a3d39d;}
