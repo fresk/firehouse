@@ -69,7 +69,8 @@ h1,h2,h3,h4,h5,h6 {color: #ebebeb; padding: 0; margin: 0;}
 h1 {font-size: 6em; text-align: right; font-weight: 400; text-transform: uppercase;}
 h4 {font-size: 2.5em; text-align: left; padding: 0.8em 0 0.2em 0; font-weight: 400;}
 
-h1.page-title {font-size: 5em; text-align: right; font-weight: 100; text-transform: uppercase; padding: 60px 50px 25px 25px;}
+h1.page-title {font-size: 3em; text-align: right; font-weight: 100; text-transform: uppercase; padding: 50px 50px 25px 25px; position: fixed; top:50px; right:50px;}
+h1#page-title-alt {font-size: 3em; text-align: right; font-weight: 100; text-transform: uppercase; padding: 50px 50px 25px 25px; position: fixed; top:50px; right:50px;}
 
 p {}
 p.large {font-size: 2.5em; padding: 0; margin: 0; line-height: 0.9em;}
@@ -79,16 +80,18 @@ a:hover {color: #fff;text-decoration: none;}
 
 button, a {outline: none;}
 
+iframe {border: none;}
+
 .page-header {width: 1080px; height: 239px; background: #111;}
 
-.page-header h1 {font-size: 5em; text-align: right; font-weight: 100; text-transform: uppercase; padding: 60px 50px 25px 25px;}
+
 .page-content {padding: 240px 40px 40px 40px; font-size: 1.6em; line-height: 1.6em; width: 1080px; float: left;}
-.page-content-top {font-size: 2.4em; line-height: 0.9em; font-weight: 100;}
-.page-content-alt {padding-top: 25px;}
+.page-content-top {font-size: 2.2em; line-height: 0.9em; font-weight: 100;}
+.page-content-alt {padding: 240px 0 50px 0;font-size: 1.5em; line-height: 1.6em; width: 1080px; float: left; padding: 10px 50px;}
 
 #logo {position: fixed; top: 20px; left: 20px;}
 
-.nobg {background: none;}
+.nobg {background: none; }
 .video-bg {width: 1080px; height: 1920px; position: absolute; z-index: 0;} 
 
 ul.menu {
