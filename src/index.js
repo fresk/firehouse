@@ -61,7 +61,7 @@ Vue.filter('qrcode', function (value, size) {
     if (!size){
         size = 400;
     }
-    var url = "https://chart.googleapis.com/chart?chs=
+    var url = "https://chart.googleapis.com/chart?chs=";
     url += size+"x"+size+"&";
     url += "cht=qr&chl="+encodeURIComponent(value);
     return url;
