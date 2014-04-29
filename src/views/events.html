@@ -4,9 +4,10 @@
 <div v-component='dropdown' class="event-filter-wrap">
   <button class="dropdown-arrow" v-on="click: show = !show"></button>
    <ul class="event-filters" v-if="show" v-transition>
-		<li class="active"><a class="bytime" href="#">Today</a></li>
-		<li><a class="bytime" href="#">This Week</a></li>
-		<li><a class="bytime" href="#">This Month</a></li>
+		
+		<li class="upcoming"><a class="bytime" href="#">All Upcoming Events</a></li>
+
+		
 		
 		<li><a v-on="click: setFilter('circus')" class="circus" href="#">Circus</a></li>
 		<li><a v-on="click: setFilter('culinary')" class="culinary" href="#">Culinary</a></li>
@@ -25,8 +26,19 @@
 
 <div class="app-screen" v-scroll>
  <ul class="event-list">
-  <li v-repeat="events" v-on="tap: showEvent(this)">
-    {{name}}
+  <li v-repeat="events" v-on="tap: showEvent(this)" class="{{categories[0].slug}}-border-top">
+  
+  	<span class="event-list-info-wrap">
+  		<span class="event-list-date">{{start_date}}</span><br><span class="event-list-time">{{start_time}}</span><br>
+  		<span class="event-list-category {{categories[0].slug}}-color">{{categories[0].name}}</span><br>
+  		<span class="event-list-location">{{location_name}}</span>
+  	</span>
+  		
+  		
+  	<div class="event-list-name-wrap">
+    	<span class="event-list-name">{{name}}</span>
+  	</div>
+    
   </li>
  </ul>
 

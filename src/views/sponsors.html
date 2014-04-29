@@ -1,23 +1,25 @@
 <div>
 <button class="backtohome" v-on="click: currentScreen = 'about'">&#9776;</button>
 
-<div id="background"></div>
-<div id="midground"></div>
-<div id="foreground"></div>
 
 <div class="page-header">
-<h1>Sponsors</h1>
+<!--<h1>Sponsors</h1>-->
 </div>
 
 <div class="app-screen" v-scroll>
 	<div class="page-content">
+	
+		<div class="page-content-top">
+			{{{modules['sponsor-page-content']['content']}}}
+		</div>
+		
 		<ul class="sponsors">
 			<li class="sponsor-level1" v-repeat="sponsors | filterBy 'level1'">
 				<img src="{{image}}" alt="{{name}}">
 			</li>
 		</ul>
 		
-		<ul class="sponsors">
+		<ul class="sponsors sponsors-list-level2">
 			<li class="sponsor-level2" v-repeat="sponsors | filterBy 'level2'">
 				<img src="{{image}}" alt="{{name}}">
 			</li>

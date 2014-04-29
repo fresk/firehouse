@@ -28,6 +28,7 @@ body {
     overflow: hidden; 
     padding:0;
     margin:0;
+    z-index: 1;
 }
 
 #app {
@@ -44,6 +45,7 @@ body {
     width: 1080px;
     height: 1920px;
     overflow: hidden;
+    
 }          
 
 .app-screen {
@@ -55,7 +57,7 @@ body {
 
 
 body {
-	background: #111; 
+	background: #111 url('/img/bg1.jpg');
 	color:#ebebeb;
 	overflow-x: hidden;
 	font-family: 'proxima-nova', "Helvetica Neue", "Helvetica", Arial, sans-serif;
@@ -75,19 +77,21 @@ a:hover {color: #fff;text-decoration: none;}
 
 button, a {outline: none;}
 
-.page-header {width: 1080px; height: 240px; padding: 0; background: rgba(0,0,0,0.8); position: fixed; top:0;z-index: 9998;}
+.page-header {width: 1080px; height: 240px; padding: 0; position: fixed; top:0;z-index: 9998;}
 .page-header h1 {padding: 50px; font-size: 3em;}
 .page-content {padding: 240px 40px 40px 40px; font-size: 1.6em; line-height: 1.6em; width: 1080px; float: left;}
+.page-content-top {font-size: 2.4em; line-height: 0.9em; font-weight: 100;}
 
 #logo {position: fixed; top: 20px; left: 20px;}
 
-
+.video-bg {width: 1080px; height: 1920px; position: absolute; z-index: 0;} 
 
 ul.menu {
     list-style: none;
     margin: 0;
     padding: 0;  
     margin-top: 500px; 
+    z-index: 9999;
 }
 
 
@@ -96,6 +100,7 @@ ul.menu li {
     width: 1080px;
     height: 239px; 
     margin-bottom: 10px;
+    -webkit-animation:swing 0.8s 1 ease-out;
 
 
 }
@@ -173,8 +178,12 @@ ul.event-filters li {
     text-align: left;
 }
 
+ul.event-filters li.upcoming {
+	width: 1080px;
+}
+
 ul.event-filters li a {
-    height: 140px;
+    height: 240px;
     display: block;
     color: #fff;
     padding:80px 20px 20px 20px;
@@ -186,20 +195,27 @@ ul.event-filters li a {
 }
 
 
+
 ul.event-list {color: #ebebeb; padding: 0; margin: 0;}
 
 ul.event-list li {
     list-style: none;
     width: 1080px;
     height: 239px; 
-    border-bottom: 1px solid #eb5f7d;
     margin: 0; 
     padding: 50px !important;
-    background: #666;
+    background: #111;
     z-index: 9998;
-    text-align: right;
-    font-size: 4em;
+    text-align: left;
 }
+
+.event-list-name-wrap {position: absolute; padding-right: 50px; max-width: 800px;}
+span.event-list-name {font-size: 3.5em; margin: 0 0 0 0; padding: 0 0 0 0; line-height: 0.8em;}
+ul.event-list li span.event-list-info-wrap {float: right; clear: both; line-height: 0.9em;text-align: right; margin: 0; padding: 0;}
+ul.event-list li span.event-list-date {font-weight: bold; font-size: 4em;line-height: 0.5em;}
+ul.event-list li span.event-list-time {font-weight: 300;font-size: 2em; line-height: 1.4em;}
+ul.event-list li span.event-list-category {font-weight: 300;font-size: 1em;line-height: 2em;}
+ul.event-list li span.event-list-location {font-weight: 300;font-size: 1em;line-height: 2em;color: #666;}
 
 /* ////// EVENT SINGLE /////// */
 
@@ -207,15 +223,25 @@ ul.event-list li {
 
 
 .event-single-content { padding: 25px; margin: 0;z-index: 9999;}
-.event-single-content-inner {position: relative;background: #111; padding: 25px 50px 50px 50px; margin: 240px 0 0 0;}
-.event-single-content-inner h2 {font-size: 6em; font-weight: 300; color: #ebebeb; margin: 0; padding: 0.3em 0 0.1em 0; line-height: 1em;}
+.event-single-content-inner {position: relative;background: #111; padding: 25px 50px 50px 50px; margin: 215px 0 0 0;min-height: 1800px;}
+.event-single-content-inner img {width: 100%; height: auto;}
+.event-single-content-inner img.alignright {width: auto; height: auto;float:right;margin: 5px 0 20px 20px;}
+.event-single-content-inner img.alignleft {width: auto; height: auto;float:left;margin: 5px 0 20px 20px;}
+.event-single-content-inner h2 {font-size: 5em; font-weight: 300; color: #ebebeb; margin: 0 0 10px 0; padding: 0.3em 0 0.1em 0; line-height: 1em; letter-spacing: -1px;}
 .event-single-content p {font-size:2em; margin: 15px 0;}
 .event-single-content strong {clear: both;}
 .event-single-content b {clear: both; display: block; padding: 0.5em 0 0.1em 0;}
 
-ul.event-single-info {list-style: none; font-size: 3em; font-weight: bold; clear: both; margin: 0; padding: 0 0 50px 0; float: left;}
+ul.event-single-info {list-style: none; font-size: 2.5em; font-weight: bold; clear: both; margin: 0; padding: 0 0 50px 0; float: left;}
 ul.event-single-info li {margin: 0 20px 0 0; float: left;}
 ul.event-single-info li.event-single-times {font-weight: 300;}
+ul.event-single-info li.location {font-weight: 300;}
+ul.event-single-info li.ticket_url {width: 100%; background: #fff; margin: 50px 0 0 0 ;}
+ul.event-single-info li.ticket_url img {max-width: 100px; margin: 0; padding: 0; float: right;}
+span.ticket_url_info {float: left; color: #111; font-size: 1.2em; font-weight: 300; line-height: 0.5em; padding: 25px 0 0 20px;}
+span.ticket_url_info_sub {font-size: 0.35em;}
+span.ticket_url_qr {float: right;}
+
 
 .event-content {clear: both; text-align: left;}
 
@@ -224,8 +250,9 @@ ul.event-single-categories li {float: left;list-style: none; margin: 0 20px 20px
 /* ////// SPONSORS /////// */
 ul.sponsors {list-style: none; border-bottom: 1px solid #666; float: left; margin: 0; padding: 40px;}
 ul.sponsors li {float: left;}
-.sponsor-level1 img {max-width: 500px;}
-.sponsor-level2 img {max-width: 350px;}
+ul.sponsors-list-level2 {margin-left: 100px;}
+.sponsor-level1 img {max-width: 450px;}
+.sponsor-level2 img {max-width: 350px; padding: 0;}
 .sponsor-level3 img {max-width: 300px;}
 
 /* ////// MAP/SPACES /////// */
@@ -248,51 +275,49 @@ ul.sponsors li {float: left;}
 .circus {background: #6957a0;}
 .education {background:#a3d39d;}
 
+.visual-art-color {color: #35b6c2;}
+.music-color {color: #cd4339;}
+.film-color {color: #f1e74d;}
+.literary-color {color: #194b74;}
+.theater-color {color: #89c357;}
+.culinary-color {color: #fdd372;}
+.social-color {color: #f68139;}
+.kids-color {color: #96d6d2;}
+.dancemovement-color {color: #a65667;}
+.circus-color {color: #6957a0;}
+.education-color {color:#a3d39d;}
+
+.visual-art-border-bottom {border-bottom: 2px solid #35b6c2;}
+.music-border-bottom {border-bottom: 2px solid #cd4339;}
+.film-border-bottom {border-bottom: 2px solid #f1e74d;}
+.literary-border-bottom {border-bottom: 2px solid #194b74;}
+.theater-border-bottom {border-bottom: 2px solid #89c357;}
+.culinary-border-bottom {border-bottom: 2px solid #fdd372;}
+.social-border-bottom {border-bottom: 2px solid #f68139;}
+.kids-border-bottom {border-bottom: 2px solid #96d6d2;}
+.dancemovement-border-bottom {border-bottom: 2px solid #a65667;}
+.circus-border-bottom {border-bottom: 2px solid #6957a0;}
+.education-border-bottom {border-bottom: 2px solid #a3d39d;}
+
+.visual-art-border-top {border-top: 2px solid #35b6c2;}
+.music-border-top {border-top: 2px solid #cd4339;}
+.film-border-top {border-top: 2px solid #f1e74d;}
+.literary-border-top {border-top: 2px solid #194b74;}
+.theater-border-top {border-top: 2px solid #89c357;}
+.culinary-border-top {border-top: 2px solid #fdd372;}
+.social-border-top {border-top: 2px solid #f68139;}
+.kids-border-top {border-top: 2px solid #96d6d2;}
+.dancemovement-border-top {border-top: 2px solid #a65667;}
+.circus-border-top {border-top: 2px solid #6957a0;}
+.education-border-top {border-top: 2px solid #a3d39d;}
+
+
 
 /* ////// ANIMATIONS /////// */
-@-webkit-keyframes STAR-MOVE {
-	from {
-		background-position: 5% 5%
-	}
-	to { 
-		background-position: 1300% 600%
-	}
-}
 
-#background {
-	background: black url(/img/background.png) repeat 5% 5%;
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
-	z-index: 1;
-	
-	-webkit-animation-name: STAR-MOVE;
-	-webkit-animation-duration: 200s;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-iteration-count: infinite;
-}
-
-#midground {
-	background: url(/img/midground.png) repeat 20% 20%;
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
-	z-index: 2;
-	
-	-webkit-animation-name: STAR-MOVE;
-	-webkit-animation-duration: 150s;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-iteration-count: infinite;
-}
-
-#foreground {
-	background: url(/img/foreground.png) repeat 35% 35%;
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
-	z-index: 3;
-	
-	-webkit-animation-name: STAR-MOVE;
-	-webkit-animation-duration: 100s;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-iteration-count: infinite;
+@-webkit-keyframes swing{
+    0%{-webkit-transform:translateX(200px); opacity: 0;}
+    100%{-webkit-transform:translateX(0); opacity: 1.0;}
 }
 
 
@@ -312,6 +337,7 @@ div.aligncenter {
 .alignright {
     float:right;
     margin: 5px 0 20px 20px;
+    width: auto;
 }
 
 .alignleft {
