@@ -85,9 +85,9 @@ iframe {border: none;}
 .page-header {width: 1080px; height: 239px; background: #111;}
 
 
-.page-content {padding: 240px 40px 40px 40px; font-size: 1.6em; line-height: 1.6em; width: 1080px; float: left;}
+.page-content {padding: 240px 40px 40px 40px; font-size: 1.6em; line-height: 1.7em; width: 1080px; float: left;}
 .page-content-top {font-size: 2.2em; line-height: 0.9em; font-weight: 100;}
-.page-content-alt {padding: 240px 0 50px 0;font-size: 1.5em; line-height: 1.6em; width: 1080px; float: left; padding: 10px 50px;}
+.page-content-alt {padding: 240px 0 50px 0;font-size: 1.5em; line-height: 1.7em; width: 1080px; float: left; padding: 10px 50px;}
 
 #logo {position: fixed; top: 20px; left: 20px;}
 
@@ -268,7 +268,16 @@ ul.sponsors-list-level2 {margin-left: 100px;}
 .spacewrap.first {margin-top: 150px;}
 
 
-
+/* ////// TALL SLIDES /////// */
+.tallslide {width: 1080px; min-height: 1920px;}
+.tallslide-content {margin-top: 240px;}
+.tallslide-content .whitebox {background: rgba(255,255,255,0.8);padding: 25px; margin:50px;font-size: 2em; text-align: left; color:#111;}
+.tallslide-content .blackbox {background: rgba(0,0,0,.8);padding: 25px; margin:50px;font-size: 2em; text-align: left; color:#fff;}
+.tallslide-content .whitebox h1 {color: #111;}
+.tallslide-content .blackbox h1 {color: #fff;}
+.tallslide-content h1 {font-size: 3em; text-align: left;}
+.tallslide-content h2 {font-size: 2em;}
+.tallslide-content h3 {font-size: 1em;}
 
 /* ////// DISCPLINE COLORS /////// */
 .visual-art {background: #35b6c2;}
