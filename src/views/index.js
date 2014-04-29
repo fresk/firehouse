@@ -74,6 +74,14 @@ Vue.component('sponsors', {
     template: require("./sponsors.html"),
 });
 
+Vue.component('camera1', {
+    template: require("./camera1.html"),
+});
 
+Vue.component('camera2', {
+    template: require("./camera2.html"),
+});
 
-
+Vue.component('camera3', {
+    template: require("./camera3.html"),
+});
