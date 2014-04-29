@@ -17375,6 +17375,16 @@
     }
   ],
   "modules": {
+    "background-video": {
+      "name": "Background Video",
+      "content": "<p><!-- //// How to update the background video on the screens ////////// please leave this comment intact ////<br />\nTo update/change the background video on the screens, follow these steps:<br />\n1. Upload the new video through the Media tab on the left (.mp4 format, not larger than 8MB, preferably 9:16/portrait format (iPhone video should work well here)<br />\n2. After it has finished uploading, hit edit and copy the URL of the video<br />\n3. Replace the URL in the custom field ('backgroundVideo') below with your newly uploaded video URL.<br />\n4. Hit Update to your right.<br />\n////////////////////////////////////////////////////////////////////// --></p>\n",
+      "slug": "background-video"
+    },
+    "live-now-menu": {
+      "name": "Live Now Menu",
+      "content": "<p><!-- //////////// How to update the Live Now menu ///////// please leave this comment intact //////<br />\nHere you can change the titles of the \"Live Now\" menu, in case you want to move one of the cameras to a different location and rename the link. Simply change the text inside the <button> tag (but don&#8217;t change the &#8216;currentScreen&#8217; link), and hit update!<br />\n////////////////////////////////////////////////////////////////////////////////////////////// &#8211;></p>\n<ul class=\"menu\">\n<li><button v-on=\"click: currentScreen = 'camera1'\">Classroom</button></li>\n<li><button v-on=\"click: currentScreen = 'camera2'\">Handball Court</button></li>\n<li><button v-on=\"click: currentScreen = 'camera3'\">Theater</button></li>\n</ul>\n",
+      "slug": "live-now-menu"
+    },
     "sponsor-page-content": {
       "name": "Sponsor Page Content",
       "content": "<p>Thank you to all of the organizations that have supported our mission. We couldn&#8217;t have come this far without you.</p>\n",
