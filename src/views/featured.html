@@ -1,11 +1,29 @@
-<div >
+<div>
 <button class="backtohome" v-on="click: currentScreen = 'home'">&#9776;</button>
+
+<div class="event-filter-wrap">
+	<h1 class="page-title">Featured</h1>
+</div>
 
 
 <div class="app-screen" v-scroll>
+
+
+
  <ul class="event-list">
-  <li v-repeat="events" v-on="tap: showEvent(this)">
-    Name: {{name}}
+  <li v-repeat="events" v-on="tap: showEvent(this)" class="{{categories[0].slug}}-border-top">
+  
+  	<span class="event-list-info-wrap">
+  		<span class="event-list-date">{{start_date}}</span><br><span class="event-list-time">{{start_time}}</span><br>
+  		<span class="event-list-category {{categories[0].slug}}-color">{{categories[0].name}}</span><br>
+  		<span class="event-list-location">{{location_name}}</span>
+  	</span>
+  		
+  		
+  	<div class="event-list-name-wrap">
+    	<span class="event-list-name">{{name}}</span>
+  	</div>
+    
   </li>
  </ul>
 

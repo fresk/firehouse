@@ -69,6 +69,8 @@ h1,h2,h3,h4,h5,h6 {color: #ebebeb; padding: 0; margin: 0;}
 h1 {font-size: 6em; text-align: right; font-weight: 400; text-transform: uppercase;}
 h4 {font-size: 2.5em; text-align: left; padding: 0.8em 0 0.2em 0; font-weight: 400;}
 
+h1.page-title {font-size: 5em; text-align: right; font-weight: 100; text-transform: uppercase; padding: 60px 50px 25px 25px;}
+
 p {}
 p.large {font-size: 2.5em; padding: 0; margin: 0; line-height: 0.9em;}
 
@@ -209,10 +211,10 @@ ul.event-list li {
     text-align: left;
 }
 
-.event-list-name-wrap {position: absolute; padding-right: 50px; max-width: 800px;}
-span.event-list-name {font-size: 3.5em; margin: 0 0 0 0; padding: 0 0 0 0; line-height: 0.8em;}
+.event-list-name-wrap {position: absolute; padding-right: 50px; max-width: 750px;}
+span.event-list-name {font-size: 3.5em; margin: 0 0 0 0; padding: 0 0 0 0; line-height: 0.8em; font-weight: 500;}
 ul.event-list li span.event-list-info-wrap {float: right; clear: both; line-height: 0.9em;text-align: right; margin: 0; padding: 0;}
-ul.event-list li span.event-list-date {font-weight: bold; font-size: 4em;line-height: 0.5em;}
+ul.event-list li span.event-list-date {font-weight: 300; font-size: 4em;line-height: 0.5em;}
 ul.event-list li span.event-list-time {font-weight: 300;font-size: 2em; line-height: 1.4em;}
 ul.event-list li span.event-list-category {font-weight: 300;font-size: 1em;line-height: 2em;}
 ul.event-list li span.event-list-location {font-weight: 300;font-size: 1em;line-height: 2em;color: #666;}
