@@ -122,7 +122,7 @@ function fetchSignageSlides(callback){
 }
 
 
-exports.syncdb = function(){
+exports.syncdb = function(cb){
 
   async.parallel({
       sponsors: fetchSponsors,
@@ -140,6 +140,7 @@ exports.syncdb = function(){
     };
     console.log("writing: db.json");
     jsonfile.writeFileSync(__dirname+"/../db.json", db);
+    if (cb) cb(null, db);
   });
 
 };

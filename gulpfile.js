@@ -77,7 +77,7 @@ gulp.task('styles', function() {
 
 
 // assets ///////////////////////////////////////
-gulp.task('assets', ['images', 'lib', 'css']);
+gulp.task('assets', ['images', 'lib', 'css', 'json']);
 
 //lib
 gulp.task('lib', function() {
@@ -90,6 +90,17 @@ gulp.task('css', function() {
   return gulp.src('src/css/**/*')
     .pipe(gulp.dest('dist/css'));
 });
+
+gulp.task('json', function() {
+  return gulp.src('src/**/*.json')
+    .pipe(gulp.dest('dist/'));
+});
+
+
+gulp.task('syncdb', function(cb) {
+  require('./src/lib/syncdb').syncdb(cb);
+});
+
 
 // images
 gulp.task('images', function(){
@@ -123,6 +134,7 @@ gulp.task('reload', function () {
 gulp.task('watch', ['build'], function() {
     gulp.watch('src/**/*.html', ['html', 'browserify']);
     gulp.watch('src/**/*.js', ['browserify']);
+    gulp.watch('src/**/*.json', ['json']);
     gulp.watch('src/**/*.styl', ['styles']);
     gulp.watch('src/img/**/*', ['images']);
     gulp.watch('src/lib/**/*', ['lib']);
