@@ -209,7 +209,7 @@ ul.event-list li {
 .event-single-content { padding: 25px; margin: 0;z-index: 9999;}
 .event-single-content-inner {position: relative;background: #111; padding: 25px 50px 50px 50px; margin: 240px 0 0 0;}
 .event-single-content-inner h2 {font-size: 6em; font-weight: 300; color: #ebebeb; margin: 0; padding: 0.3em 0 0.1em 0; line-height: 1em;}
-.event-single-content p {font-size:2em;}
+.event-single-content p {font-size:2em; margin: 15px 0;}
 .event-single-content strong {clear: both;}
 .event-single-content b {clear: both; display: block; padding: 0.5em 0 0.1em 0;}
 
