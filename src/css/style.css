@@ -79,13 +79,16 @@ a:hover {color: #fff;text-decoration: none;}
 
 button, a {outline: none;}
 
-.page-header {width: 1080px; height: 240px; padding: 0; position: fixed; top:0;z-index: 9998;}
-.page-header h1 {padding: 50px; font-size: 3em;}
+.page-header {width: 1080px; height: 239px; background: #111;}
+
+.page-header h1 {font-size: 5em; text-align: right; font-weight: 100; text-transform: uppercase; padding: 60px 50px 25px 25px;}
 .page-content {padding: 240px 40px 40px 40px; font-size: 1.6em; line-height: 1.6em; width: 1080px; float: left;}
 .page-content-top {font-size: 2.4em; line-height: 0.9em; font-weight: 100;}
+.page-content-alt {padding-top: 25px;}
 
 #logo {position: fixed; top: 20px; left: 20px;}
 
+.nobg {background: none;}
 .video-bg {width: 1080px; height: 1920px; position: absolute; z-index: 0;} 
 
 ul.menu {
