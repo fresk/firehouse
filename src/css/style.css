@@ -270,7 +270,8 @@ ul.sponsors-list-level2 {margin-left: 100px;}
 
 /* ////// TALL SLIDES /////// */
 .tallslide {width: 1080px; min-height: 1920px;}
-.tallslide-content {margin-top: 240px;}
+.tallslide-content {margin-top: 0; padding-top: 240px;}
+.tallslide-content iframe {position: absolute; z-index: 2; top:0;}
 .tallslide-content .whitebox {background: rgba(255,255,255,0.8);padding: 25px; margin:50px;font-size: 2em; text-align: left; color:#111;}
 .tallslide-content .blackbox {background: rgba(0,0,0,.8);padding: 25px; margin:50px;font-size: 2em; text-align: left; color:#fff;}
 .tallslide-content .whitebox h1 {color: #111;}
