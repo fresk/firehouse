@@ -4,8 +4,8 @@
 
     <div v-component v-with="currentTallSlide" class="tallslide">
       <h1>{{name}}</h1>
-      <p>{{content}}</p>
-      <img src="{{image}}" alt="title">
+      <p>{{{content}}}</p>
+      <img v-attr="src: {{image}}" alt="title">
     </div>
 
   </div>

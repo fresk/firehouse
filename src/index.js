@@ -6,18 +6,22 @@ var Vue = require('vue');
 Vue.directive('scroll', {
 
     bind: function () {
-        var el = this.el;
+        var self = this;
+        function refresh(){
+            if (self.el._iscroll)
+                self.el._iscroll.refresh();
+            else
+                setTimeout(refresh, 200);
+        }
         var options = {tap: true};
-        el._iscroll = new IScroll(this.el, options);
-        setTimeout(function(){
-            el._iscroll.refresh();
-            console.log("refresh")
-        }, 200);
+        self.el._iscroll = new IScroll(self.el, options);
+        setTimeout(refresh, 200);
     },
     update: function (value) {
         // do something based on the updated value
         // this will also be called for the initial value
-        console.log("update iScroll");
+        //console.log("update iScroll");
+        if (this.el._iscroll)
         el._iscroll.refresh();
     },
     unbind: function () {
@@ -91,24 +95,26 @@ function setupScreenSaver(){
         screenSaverSlides.push({'screen': 'tallslide', 'data': slide});
     });
 
-    $(document).on('click', function(){
-        console.log("CLICK")
+    var stopScreenSaver = function(){
         if (APP.screenSaverActive){
-            console.log("deactivating screensaver");
+            console.log("stoping screensaver");
             APP.screenSaverTimer = SCRENSAVER_COUNTDOWN;
             APP.screenSaverActive = false
             APP.currentScreen = 'home'
         }
-    });
+    };
+
+    $(document).on('click', stopScreenSaver);
+    $(document).on('touchstart', stopScreenSaver);
 
     setInterval(function(){
         APP.screenSaverTimer--;
         console.log("screensaver countdown:", APP.screenSaverTimer);
         if (APP.screenSaverTimer <= 0){
-            //console.log("screensaver activate");
+            console.log("starting screensaver");
             APP.screenSaverActive = true;
             slide = _.sample(screenSaverSlides);
-            console.log(slide);
+            //console.log(slide);
             if (slide.screen == 'event-detail-featured')
                 APP.showFeaturedEvent(slide.data);
             else if (slide.screen == 'tallslide')
@@ -141,6 +147,7 @@ window.APP = new Vue({
 
     ready: function(){
         setTimeout(setupScreenSaver, 1000);
+
     },
 
     methods: {
@@ -188,6 +195,17 @@ window.APP = new Vue({
 
 
 
+$(window).on('hashchange', function() {
+    var screenTarget = window.location.hash.substring(1);
+    if (screenTarget.length > 2){
+        if (Vue.component(screenTarget))
+            APP.currentScreen = screenTarget;
+        else
+            APP.currentScreen = 'home';
+
+        window.location.hash = "#";
+    }
+});
 
 
 
@@ -195,7 +213,7 @@ function updateScrollers(){
     walkTheDOM(document, function(node){
         if (node._iscroll){
             setTimeout(function(){
-                console.log("updateng a scroller");
+                //console.log("updateng a scroller");
                 node._iscroll.refresh();
             }, 500);
         }

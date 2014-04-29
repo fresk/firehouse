@@ -14,19 +14,19 @@
 		
 		<ul class="sponsors">
 			<li class="sponsor-level1" v-repeat="sponsors | filterBy 'level1'">
-				<img src="{{image}}" alt="{{name}}">
+				<img v-attr="src: {{image}}" alt="{{name}}">
 			</li>
 		</ul>
 		
 		<ul class="sponsors sponsors-list-level2">
 			<li class="sponsor-level2" v-repeat="sponsors | filterBy 'level2'">
-				<img src="{{image}}" alt="{{name}}">
+				<img v-attr="src: {{image}}" alt="{{name}}">
 			</li>
 		</ul>            
 		
 		<ul class="sponsors">
 			<li class="sponsor-level3" v-repeat="sponsors | filterBy 'level3'">
-				<img src="{{image}}" alt="{{name}}">
+				<img v-attr="src: {{image}}" alt="{{name}}">
 			</li>
 		</ul>  
 	</div><!-- ///// end.page-content////// -->

@@ -26,7 +26,7 @@
 	      	<li class="ticket_url" v-if='ticket_url'>
 			  	<span class="ticket_url_info">Buy Tickets Now <br>
 			  	<span class="ticket_url_info_sub">Visit {{ticket_url}} or scan this QR code:</span></span>
-			  	<img class="ticket_url_qr" src="{{ ticket_url|qrcode }}">
+			  	<img class="ticket_url_qr" v-attr="src:{{ ticket_url|qrcode }}">
 			</li>
 	  </ul>
       <div class="event-content">

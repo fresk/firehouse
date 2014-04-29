@@ -17382,7 +17382,7 @@
     },
     "live-now-menu": {
       "name": "Live Now Menu",
-      "content": "<p><!-- //////////// How to update the Live Now menu ///////// please leave this comment intact //////<br />\nHere you can change the titles of the \"Live Now\" menu, in case you want to move one of the cameras to a different location and rename the link. Simply change the text inside the <button> tag (but don&#8217;t change the &#8216;currentScreen&#8217; link), and hit update!<br />\n////////////////////////////////////////////////////////////////////////////////////////////// &#8211;></p>\n<ul class=\"menu\">\n<li><button v-on=\"click: currentScreen = 'camera1'\">Classroom</button></li>\n<li><button v-on=\"click: currentScreen = 'camera2'\">Handball Court</button></li>\n<li><button v-on=\"click: currentScreen = 'camera3'\">Theater</button></li>\n</ul>\n",
+      "content": "<p><!-- /// comment //--></p>\n<ul class=\"menu\">\n<li><a href=\"#camera1\"><button>Camera 1</button></a></li>\n<li><a href=\"#camera2\"><button>Camera 2</button></a></li>\n<li><a href=\"#camera3\"><button>Camera 3</button></a></li>\n</ul>\n",
       "slug": "live-now-menu"
     },
     "sponsor-page-content": {
@@ -17397,6 +17397,11 @@
     }
   },
   "tallslides": {
+    "dmsc-shadow-poster": {
+      "name": "DMSC Shadow Poster",
+      "content": "<p><iframe width=\"1080\" height=\"1920\" src=\"http://fresksite.net/dmscscreens/posters/index.html?t=123\" scrolling=\"no\" frameborder=\"0\" style=\"border: 0px none transparent;\"></iframe></p>\n",
+      "slug": "dmsc-shadow-poster"
+    },
     "slide2": {
       "name": "Slide2",
       "content": "",
