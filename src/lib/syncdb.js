@@ -5,30 +5,25 @@ var request = require('superagent');
 var tabletop = require('tabletop');
 var jsonfile = require('jsonfile');
 
-var sponsor_sheet_url = "https://docs.google.com/spreadsheet/pub?key=0AlN0Yr61Qrn1dDNHZm1XRENORHZCQnV1VVBsM0c3MEE&output=html";
 var event_location_url = "http://dmsc.fresk.io/wp-content/themes/fresk-wp-bootstrap/event-json.php";
 
 var sponsor_feed_url = "http://dmsc.fresk.io/?json=1&post_type=sponsors";
+var screen_modules_url = "http://dmsc.fresk.io/?json=1&post_type=screen-module";
 
 
 
-function fetchSpreadhseetData(callback){
-  console.log("fetching sponsor list from google docs...");
-  tabletop.init({
-    key: sponsor_sheet_url,
-    callback: function(data, tabletop){
-      console.log("got sponsor list");
-      callback(null, data);
-    },
-    simpleSheet: true
-  });
-}
 
 function fetchEventsAndLocations(callback){
   console.log("fetching event and venue data from dmsc.fresk.io...");
   request(event_location_url, function(res){
     console.log("got event and venue data");
-    var events = res.body.events;
+    res.body.events = _.map(res.body.events, function(e){
+        var find = '\r\n';
+        var re = new RegExp(find, 'g');
+        e.content = e.content.replace(re, "<br/>");
+        return e;
+
+    });
     callback(null, res.body);
   });
 }
@@ -37,7 +32,6 @@ function fetchEventsAndLocations(callback){
 function fetchSponsors(callback){
   console.log("fetching sponsors dmsc.fresk.io...");
   request(sponsor_feed_url, function(res){
-    console.log("got sponsor data");
     var posts = res.body.posts;
     var sponsors = _.map(posts, function(p){
         return {
@@ -46,11 +40,34 @@ function fetchSponsors(callback){
             'level': p['taxonomy_sponsorlevel'][0]['slug'],
         }
     });
-    console.log("SPONSORS:", sponsors);
     callback(null, sponsors);
   });
 }
 
+
+
+function fetchScreenModules(callback){
+  console.log("fetching screen modules dmsc.fresk.io...");
+  request(screen_modules_url, function(res){
+    var posts = res.body.posts;
+    var modules = _.map(posts, function(p){
+        var module = {
+            'name': p['title'],
+            'content': p['content'],
+            'slug': p['slug']
+        };
+        if (p['attachments'].length > 0){
+            module['image'] =  p['attachments'][0]['images']['full']['url'];
+        }
+        return module;
+    });
+    var mods = {};
+    _.forEach(modules, function(m){
+        mods[m.slug] = m;
+    });
+    callback(null, mods);
+  });
+}
 
 
 
@@ -59,13 +76,15 @@ exports.syncdb = function(){
 
   async.parallel({
       sponsors: fetchSponsors,
+      modules: fetchScreenModules,
       website: fetchEventsAndLocations
   },
   function(err, results) {
      var db = {
       events: results.website.events,
       locations: results.website.locations,
-      sponsors: results.sponsors
+      sponsors: results.sponsors,
+      modules: results.modules
     };
     console.log("writing: db.json");
     jsonfile.writeFileSync(__dirname+"/../db.json", db);

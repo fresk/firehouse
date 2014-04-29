@@ -57,6 +57,18 @@ Vue.filter('category', function (value) {
 })
 
 
+Vue.filter('qrcode', function (value, size) {
+    if (!size){
+        size = 400;
+    }
+    var url = "https://chart.googleapis.com/chart?chs=
+    url += size+"x"+size+"&";
+    url += "cht=qr&chl="+encodeURIComponent(value);
+    return url;
+})
+
+
+
 
 
 require("./views");
@@ -70,6 +82,7 @@ window.APP = new Vue({
       'events': DB.events,
       'locations': DB.locations,
       'sponsors': DB.sponsors,
+      'modules': DB.modules,
       'currentEvent': {},
       'categoryFilter': "",
     },
