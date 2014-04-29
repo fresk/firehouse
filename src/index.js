@@ -1,5 +1,6 @@
 var Vue = require('underscore');
 var Vue = require('vue');
+//var sync = require("./lib/syncdb");
 //Vue.use(require('./lib/vue-tuio'));
 
 Vue.directive('scroll', {
@@ -71,6 +72,7 @@ Vue.filter('qrcode', function (value, size) {
 
 
 
+
 require("./views");
 
 window.DB = require("./db.json");
@@ -80,14 +82,25 @@ window.APP = new Vue({
     data: {
       'currentScreen': 'home',
       'events': DB.events,
-      'locations': DB.locations,
       'sponsors': DB.sponsors,
       'modules': DB.modules,
+      'tallslides': DB.tallslides,
       'currentEvent': {},
       'categoryFilter': "",
     },
 
     methods: {
+        syncDB: function(){
+            window.DB = sync.syndb();
+            this.locations = DB.locations;
+            this.sponsors = DB.sponsors;
+            this.modules = DB.modules;
+            this.tallslides = DB.tallslides;
+            this.events = DB.events;
+            this.categoryFilter = "";
+            this.currentScreen = "home";
+        },
+
         showEvent: function(event){
             APP.currentEvent = event;
             APP.currentScreen = 'event-detail';

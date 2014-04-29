@@ -11,20 +11,26 @@
 
 
  <ul class="event-list">
+
   <li v-repeat="events" v-on="tap: showEvent(this)" class="{{categories[0].slug}}-border-top">
-  
   	<span class="event-list-info-wrap">
   		<span class="event-list-date">{{start_date}}</span><br><span class="event-list-time">{{start_time}}</span><br>
   		<span class="event-list-category {{categories[0].slug}}-color">{{categories[0].name}}</span><br>
   		<span class="event-list-location">{{location_name}}</span>
   	</span>
-  		
-  		
   	<div class="event-list-name-wrap">
     	<span class="event-list-name">{{name}}</span>
   	</div>
-    
   </li>
+
+  <li v-repeat="tallslides" class="tallslide-wrap">
+    <div class="tallslide-title">{{title}}</div>
+    <div class="tallslide-content">{{content}}</div>
+    <div class="tallslide-image"><img src="{{image}}" alt="title"></div>
+  </li>
+
+
+
  </ul>
 
  </div>

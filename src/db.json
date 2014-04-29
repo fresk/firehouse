@@ -17385,5 +17385,19 @@
       "content": "<p class=\"large\"> Rent space at the Des Moines Social Club for your next event, class, or meeting.</p>\n<h4>HANDBALL COURT</h4>\n<p>\t\t\tThe newly restored Handball Court is ideally suited to small parties and meetings. Originally built as a Handball Court in 1938, the space has natural lighting, original wood ﬂoors and tall ceilings, giving the room an open spacious feel. This space is also suited to performances or wedding ceremonies with up to 84 attendees.</p>\n<p>\t\t\tHourly – Meetings: $50/hr plus staffing and optional equipment/amenities<br />\n\t\t\tClasses: $25/hr plus staffing and optional equipment/amenities<br />\n\t\t\tOne time Event – Up to 24 hours: $500 plus staffing and optional equipment/amenities</p>\n<h4>CULINARY STUDIO</h4>\n<p>\t\t\tThis light-filled space is beautifully suited for parties and reception events. Enjoy the sparkling lights of downtown Des Moines for your event. The highly adaptable space can seat 100 for dinner, and be rented for unique events like cooking classes and demonstrations.</p>\n<p>\t\t\tHourly – Meetings: $50/hr plus staffing and optional equipment/amenities<br />\n\t\t\tOne time Event – Up to 24 hours: $500 plus staffing and optional equipment/amenities</p>\n<h4>KUM &amp; GO THEATER</h4>\n<p>\t\t\tThis easily convertible space is suited to a variety of events; performance/concert venue, wedding ceremony/reception, vendor fair, fashion show and more. Customize your rental with theatrical lighting, lobby area and dressing rooms.</p>\n<p>\t\t\tHourly – Meetings: $100/hr plus staffing and optional equipment/amenities<br />\n\t\t\tOne time Event – 24 hours: $1,000 plus staffing and optional equipment/amenities</p>\n<h4>STUDIO A</h4>\n<p>\t\t\tThis brand new space with mirrors and wood ﬂoors is ideally suited to movement classes. Perfect for yoga, fi tness or dance. Natural light and a built in sound system provide the perfect set up for class rentals and events.</p>\n<p>\t\t\tHourly – Meetings: $30/hr plus staffing and optional equipment/amenities<br />\n\t\t\tOne time Event – Up to 24 hours: $300 plus staffing and optional equipment/amenities</p>\n<h4>STUDIOS B &amp; C</h4>\n<p>\t\t\tThis newly constructed space is suited to meetings and classes of up to 20 people. Housed in the education wing of the building, these rooms are ideally suited for workshops and break out sessions.</p>\n<p>\t\t\tHourly – Meetings: $30/hr plus staffing and optional equipment/amenities<br />\n\t\t\tOne time Event – Up to 24 hours: $300 plus staffing and optional equipment/amenities</p>\n<h4>COURTYARD</h4>\n<p>\t\t\tThis 7,000 square foot outdoor space is perfect for hosting concerts, receptions, and other large-group events. Feel the heartbeat of downtown Des Moines in this urban, energetic setting. The stage in the northwest corner is fully-equipped to meet all of your sound and tech needs. Permanent grounding hooks make tent assembly simple and convenient.</p>\n<p>\t\t\tOne time Event – Up to 24 hours: $1,250 plus staffing and optional equipment/amenities<br />\n\t\t\tScreen Usage: $150 plus optional tech staffing</p>\n",
       "slug": "rental-page-content"
     }
+  },
+  "tallslides": {
+    "slide2": {
+      "name": "Slide2",
+      "content": "",
+      "slug": "slide2",
+      "image": "http://desmoinessocialclub.org/wp-content/uploads/2014/03/nr2.jpg"
+    },
+    "slide1": {
+      "name": "Slide1",
+      "content": "",
+      "slug": "slide1",
+      "image": "http://desmoinessocialclub.org/wp-content/uploads/2014/03/nr1.jpg"
+    }
   }
 }

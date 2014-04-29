@@ -135,7 +135,8 @@ exports.syncdb = function(){
       events: results.website.events,
       locations: results.website.locations,
       sponsors: results.sponsors,
-      modules: results.modules
+      modules: results.modules,
+      tallslides: results.tallslides
     };
     console.log("writing: db.json");
     jsonfile.writeFileSync(__dirname+"/../db.json", db);
