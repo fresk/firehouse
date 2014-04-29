@@ -1,0 +1,22 @@
+<div>
+  <button class="backtohome" v-on="click: currentScreen = 'featured'" v-if="!screenSaverActive">&#9776;</button>
+  <div class="app-screen" v-scroll>
+
+    <div v-component v-with="currentTallSlide" class="tallslide">
+      <h1>{{name}}</h1>
+      <p>{{content}}</p>
+      <img src="{{image}}" alt="title">
+    </div>
+
+  </div>
+
+</div>   
+
+
+
+
+
+
+
+
+

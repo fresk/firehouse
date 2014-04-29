@@ -1,0 +1,51 @@
+<div>
+  <button class="backtohome" v-on="click: currentScreen = 'featured'" v-if="!screenSaverActive">&#9776;</button>
+  <div class="app-screen" v-scroll>
+
+    <div v-component v-with="currentEvent" class="{{categories[0].slug}}">
+    
+    <div class="event-single-content">
+    <div class="event-single-content-inner">
+      <h2 class="name {{categories[0].slug}}-border-bottom">{{name}}</h2>
+      
+	  <!--<ul class="event-single-categories" v-repeat="categories">
+	    <li class="category-{{slug}}">{{name}}</li>
+	  </ul>-->
+	  
+	  <!-- <img src="{{image}}" /> -->
+      <ul class="event-single-info">
+		  	<li class="start_date">{{start_date_alt}}</li>
+		  	<li>&bull;</li>
+		  	<!--<div class="end_date">{{end_date}}</div>-->
+		  	<li class="event-single-times">{{start_time}} <!--- {{end_time}}--></li>
+		  	<li>&bull;</li>
+		  	<li class="location">{{location_name}}</li>
+	      	<li class="ticket_url" v-if='ticket_url'>
+			  	<span class="ticket_url_info">Buy Tickets Now <br>
+			  	<span class="ticket_url_info_sub">Visit {{ticket_url}} or scan this QR code:</span></span>
+			  	<img class="ticket_url_qr" src="{{ ticket_url|qrcode }}">
+			</li>
+	  </ul>
+      <div class="event-content">
+        <p>{{{content}}}</p>
+      </div>
+    </div> <!-- // end .event-single-content // --> 
+    </div> <!-- // end .event-single-content-inner // --> 
+       
+   
+   
+    
+    
+    </div>
+
+  </div>
+
+</div>   
+
+
+
+
+
+
+
+

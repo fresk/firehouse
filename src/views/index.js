@@ -33,12 +33,22 @@ Vue.component('event-detail', {
 });
 
 
+
+Vue.component('event-detail-featured', {
+    template: require("./event-detail-featured.html"),
+});
+
 Vue.component('featured', {
     ready: function(){
         APP.filterEvents('featured-event') ;
     },
     template: require("./featured.html"),
 });
+
+Vue.component('tallslide', {
+    template: require("./tallslide.html"),
+});
+
 
  Vue.component('livenow', {
     template: require("./livenow.html"),
