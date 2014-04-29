@@ -9,7 +9,8 @@ var event_location_url = "http://dmsc.fresk.io/wp-content/themes/fresk-wp-bootst
 
 var sponsor_feed_url = "http://dmsc.fresk.io/?json=1&post_type=sponsors";
 var screen_modules_url = "http://dmsc.fresk.io/?json=1&post_type=screen-module";
-
+var screen_tallslides_url = "http://dmsc.fresk.io/?json=1&post_type=tallslides";
+var screen_signagesliders_url = "http://dmsc.fresk.io/?json=1&post_type=signagesliders";
 
 
 
@@ -71,12 +72,62 @@ function fetchScreenModules(callback){
 
 
 
+function fetchTallSlides(callback){
+  console.log("fetching tallslides from dmsc.fresk.io...");
+  request(screen_tallslides_url, function(res){
+    var posts = res.body.posts;
+    var modules = _.map(posts, function(p){
+        var module = {
+            'name': p['title'],
+            'content': p['content'],
+            'slug': p['slug']
+        };
+        if (p['attachments'].length > 0){
+            module['image'] =  p['attachments'][0]['images']['full']['url'];
+        }
+        return module;
+    });
+    var mods = {};
+    _.forEach(modules, function(m){
+        mods[m.slug] = m;
+    });
+    callback(null, mods);
+  });
+}
+
+
+
+
+function fetchSignageSlides(callback){
+  console.log("fetching tallslides from dmsc.fresk.io...");
+  request(screen_signagesliders_url, function(res){
+    var posts = res.body.posts;
+    var modules = _.map(posts, function(p){
+        var module = {
+            'name': p['title'],
+            'content': p['content'],
+            'slug': p['slug']
+        };
+        if (p['attachments'].length > 0){
+            module['image'] =  p['attachments'][0]['images']['full']['url'];
+        }
+        return module;
+    });
+    var mods = {};
+    _.forEach(modules, function(m){
+        mods[m.slug] = m;
+    });
+    callback(null, mods);
+  });
+}
+
 
 exports.syncdb = function(){
 
   async.parallel({
       sponsors: fetchSponsors,
       modules: fetchScreenModules,
+      tallslides: fetchTallSlides,
       website: fetchEventsAndLocations
   },
   function(err, results) {

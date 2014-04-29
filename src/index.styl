@@ -1,2 +1,15 @@
 
-
+.app-container {
+        position: absolute;
+        opacity: 1;
+        -webkit-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+.v-enter {
+    opacity: 0;
+    transform: translate3d(1080px, 0, 0);
+}
+.v-leave {
+    opacity: 0;
+    //transform: translate3d(-1080px, 0, 0);
+}
