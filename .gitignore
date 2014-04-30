@@ -1,7 +1,7 @@
 dist/*
 
 src/db.json
-
+boot/config.json
 # Logs
 logs
 *.log
