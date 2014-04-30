@@ -17313,13 +17313,13 @@
   "tallslides": {
     "byrne-quote": {
       "name": "David Byrne Quote",
-      "content": "<h3 style=\"padding: 400px 50px 50px 50px;font-size:100px; line-height:100px; color:#fff; letter-spacing: -1px; font-family: Helvetica;text-align:left;\"> <span style=\"font-weight:200;\">&#8220;It may not be cool, but it might be beyond cool.</span><br /> Here among the winding creeks and fields of corn they may have arrived at some kind of secret satisfaction.&#8221;</p>\n<p><span style=\"font-weight:200;\">David Byrne</span></h3>\n",
+      "content": "<blockquote><h3 style=\"padding: 240px 50px 50px 50px;font-size:100px; line-height:100px; color:#fff; letter-spacing: -1px; font-family: Helvetica;text-align:left;\"> <span style=\"font-weight:200;\">&#8220;It may not be cool, but it might be beyond cool.</span><br /> Here among the winding creeks and fields of corn they may have arrived at some kind of secret satisfaction.&#8221;</p>\n<p><span style=\"font-weight:200;\">David Byrne</span></h3>\n",
       "slug": "byrne-quote",
       "image": "http://desmoinessocialclub.org/wp-content/uploads/2014/03/davidbyrne.jpg"
     },
     "dmsc-shadow-poster": {
       "name": "Everyone is a member.",
-      "content": "<p><iframe width=\"1080\" height=\"1920\" src=\"http://fresksite.net/dmscscreens/posters/index.html?t=123\" scrolling=\"no\" frameborder=\"0\" style=\"border: 0px none transparent;\"></iframe></p>\n",
+      "content": "<p><iframe width=\"1080\" height=\"1920\" src=\"http://fresksite.net/dmscscreens/posters/index.html\" scrolling=\"no\" frameborder=\"0\" style=\"border: 0px none transparent;\"></iframe></p>\n",
       "slug": "dmsc-shadow-poster"
     },
     "slide2": {

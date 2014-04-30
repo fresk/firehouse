@@ -83,7 +83,7 @@ Vue.filter('qrcode', function (value, size) {
 
 
 var SCRENSAVER_INTERVAL = 5000; //ms between each slide
-var SCRENSAVER_COUNTDOWN = 6; //how many "intervals" before starting screensaver
+var SCRENSAVER_COUNTDOWN = 60; //how many "intervals" before starting screensaver
 
 function setupScreenSaver(){
 

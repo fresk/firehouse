@@ -4,6 +4,197 @@ process.chdir(__dirname+"/../");
 var fs = require('fs');
 var mkdirp = require('mkdirp');
 var spawn = require('child_process').spawn;
+// Load plugins
+var gulp       = require('gulp');
+var browserify = require('browserify');
+var source     = require('vinyl-source-stream');
+var envify     = require('envify/custom');
+var partialify = require('partialify');
+var stylus     = require('gulp-stylus');
+var nib        = require('nib');
+var minifycss  = require('gulp-minify-css');
+var uglify     = require('gulp-uglify');
+var imagemin   = require('gulp-imagemin');
+var rename     = require('gulp-rename');
+var gulpif     = require('gulp-if');
+var clean      = require('gulp-clean');
+var cache      = require('gulp-cache');
+var notify     = require('gulp-notify');
+var connect    = require('gulp-connect');
+var watch      = require('gulp-watch');
+var git        = require('gulp-git');
+
+
+var env = process.env.NODE_ENV;
+module.exports = gulp;
+
+// default task
+gulp.task('default', ['build', 'connect', 'watch']);
+
+// clean
+gulp.task('clean', function() {
+  return gulp.src(['dist/**/*'], {read: false})
+    .pipe(clean());
+});
+
+
+gulp.task('git-pull', function(){
+  git.pull('origin', 'master', {args: '--rebase'});
+});
+
+
+// build tasks ///////////////////////////////////////////////
+gulp.task('build', ['html', 'browserify', 'styles', 'assets', 'syncdb']);
+
+// html
+gulp.task('html', ['syncdb'], function () {
+  gulp.src('./src/*.html')
+    .pipe(gulp.dest('dist/'));
+});
+
+// browserify
+gulp.task('browserify', ['syncdb'], function() {
+  var environ = {
+    NODE_ENV: process.env.NODE_ENV
+  };
+  browserify('./src/index.js')
+    .transform(envify(environ))
+    .transform(partialify)
+    .bundle({debug: env === 'development'})
+    .on('error', handleErrors)
+    .pipe(source('bundle.js'))
+    .pipe(gulpif(env === 'production', uglify()))
+    .pipe(gulp.dest('dist/'))
+});
+
+// stylus
+gulp.task('styles',['syncdb'], function() {
+  var stylus_options = {
+    'use': [nib()],
+    //'include css': true,
+  };
+  var minify_options = {
+    noRebase: true,
+    processImport: false,
+    keepBreaks: env === 'development',
+    noAdvanced: env === "development"
+  };
+  return gulp.src('src/index.styl')
+    .pipe(stylus(stylus_options))
+    .on('error', handleErrors)
+    //.pipe(minifycss(minify_options))
+    .pipe(rename('index.css'))
+    .pipe(gulp.dest('dist/'))
+});
+
+
+// assets ///////////////////////////////////////
+gulp.task('assets', ['images', 'lib', 'css', 'json', 'syncdb']);
+
+//lib
+gulp.task('lib', ['syncdb'],  function() {
+  return gulp.src('src/lib/**/*')
+    .pipe(gulp.dest('dist/lib'));
+});
+
+
+gulp.task('css', ['syncdb'], function() {
+  return gulp.src('src/css/**/*')
+    .pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('json', ['syncdb'], function() {
+  return gulp.src('src/**/*.json')
+    .pipe(gulp.dest('dist/'));
+});
+
+
+gulp.task('syncdb', function(cb) {
+  require('./src/lib/syncdb').syncdb(function(){
+    cb(null);
+  });
+});
+
+
+// images
+gulp.task('images', ['syncdb'], function(){
+  return gulp.src('src/img/**/*')
+    //.pipe(cache(imagemin({
+    //  optimizationLevel: 3,
+    //  progressive: true,
+    //  interlaced: true
+    //}))).on('error', handleErrors)
+    .pipe(gulp.dest('dist/img'))
+});
+
+
+
+// dev server with reload ////////////////////////////////
+gulp.task('connect', function() {
+  connect.server({
+    root: 'dist',
+    port: 7000,
+    livereload: true
+  });
+});
+
+//reload
+gulp.task('reload', function () {
+  gulp.src('./src/index.html')
+    .pipe(connect.reload());
+});
+
+// watch
+gulp.task('watch', ['build'], function() {
+    gulp.watch('src/**/*.html', ['html', 'browserify']);
+    gulp.watch('src/**/*.js', ['browserify']);
+    gulp.watch('src/**/*.json', ['json']);
+    gulp.watch('src/**/*.styl', ['styles']);
+    gulp.watch('src/img/**/*', ['images']);
+    gulp.watch('src/lib/**/*', ['lib']);
+    gulp.watch('src/css/**/*', ['css']);
+    gulp.watch('dist/**/*', ['reload']);
+});
+
+
+
+
+var Service = require('./boot/node-mac').Service;
+var service = new Service({
+  name:'dmsc-screens',
+  script: __dirname+'/boot/boot.js',
+  logpath: __dirname+'/boot'
+});
+service.root = process.env.HOME+"/Library/LaunchAgents";
+
+
+// clean
+gulp.task('install', function() {
+    service.install()
+});
+gulp.task('uninstall', function() {
+    service.uninstall()
+});
+gulp.task('start', function() {
+    service.start()
+});
+gulp.task('stop', function() {
+    service.stop()
+});
+
+
+
+// handle erros gracefully instead of quitting...
+function handleErrors() {
+	// Send error to notification center with gulp-notify
+	notify.onError({
+		title: "Compile Error",
+		message: "<%= error %>"
+	}).apply(this, arguments);
+	// Keep gulp from hanging on this task
+	this.emit('end');
+};
+
 var socket_io = require('socket.io-client');
 var gulp = require(__dirname+"/../gulpfile.js");
 
@@ -17,7 +208,7 @@ socket.on('connect', function(){
     socket.on('screens', function(data){
         console.log("SCREENS:", data)
         if (data == "syncdb") {
-            gulp.start("syncdb")
+            gulp.start("build")
         }
         if (data == "reboot"){
             console.log("reboot")

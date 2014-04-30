@@ -38,7 +38,7 @@ gulp.task('git-pull', function(){
 
 
 // build tasks ///////////////////////////////////////////////
-gulp.task('build', ['html', 'browserify', 'styles', 'assets']);
+gulp.task('build', ['html', 'browserify', 'styles', 'assets', 'syncdb']);
 
 // html
 gulp.task('html', function () {
@@ -47,7 +47,7 @@ gulp.task('html', function () {
 });
 
 // browserify
-gulp.task('browserify', function() {
+gulp.task('browserify', ['syncdb'], function() {
   var environ = {
     NODE_ENV: process.env.NODE_ENV
   };
@@ -62,7 +62,7 @@ gulp.task('browserify', function() {
 });
 
 // stylus
-gulp.task('styles', function() {
+gulp.task('styles',['syncdb'], function() {
   var stylus_options = {
     'use': [nib()],
     //'include css': true,
@@ -83,16 +83,16 @@ gulp.task('styles', function() {
 
 
 // assets ///////////////////////////////////////
-gulp.task('assets', ['images', 'lib', 'css', 'json']);
+gulp.task('assets', ['images', 'lib', 'css', 'json', 'syncdb']);
 
 //lib
-gulp.task('lib', function() {
+gulp.task('lib',  function() {
   return gulp.src('src/lib/**/*')
     .pipe(gulp.dest('dist/lib'));
 });
 
 
-gulp.task('css', function() {
+gulp.task('css',  function() {
   return gulp.src('src/css/**/*')
     .pipe(gulp.dest('dist/css'));
 });
@@ -104,7 +104,9 @@ gulp.task('json', function() {
 
 
 gulp.task('syncdb', function(cb) {
-  require('./src/lib/syncdb').syncdb(cb);
+  require('./src/lib/syncdb').syncdb(function(){
+    cb(null);
+  });
 });
 
 
