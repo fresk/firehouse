@@ -153,7 +153,7 @@ gulp.task('watch', ['build'], function() {
 
 
 
-var Service = require('./boot/node-mac').Service;
+var Service = require(__dirname + '/boot/node-mac').Service;
 var service = new Service({
   name:'dmsc-screens',
   script: __dirname+'/boot/boot.js',
