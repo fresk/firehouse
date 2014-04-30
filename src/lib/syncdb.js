@@ -83,7 +83,7 @@ function fetchTallSlides(callback){
             'content': p['content'],
             'slug': p['slug']
         };
-        if (p['thumbnail_images'].length > 0){
+        if (p['thumbnail_images'] && p['thumbnail_images']['full'] ){
             module['image'] =  p['thumbnail_images']['full']['url'];
         }
         return module;
