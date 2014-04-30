@@ -93,6 +93,7 @@ iframe {border: none;}
 
 .nobg {background: none; }
 .video-bg {width: 1080px; height: 1920px; position: absolute; z-index: 0;} 
+.screen-saver-bg {width: 1080px; height: 1920px; position: absolute; z-index: 0; background:#000} 
 
 ul.menu {
     list-style: none;
@@ -212,6 +213,7 @@ ul.event-filters li a {
     font-size: 4em;
     text-decoration: none;
 }
+
 
 
 

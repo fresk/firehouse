@@ -38,6 +38,10 @@ Vue.component('event-detail-featured', {
     template: require("./event-detail-featured.html"),
 });
 
+Vue.component('event-detail-featured2', {
+    template: require("./event-detail-featured.html"),
+});
+
 Vue.component('featured', {
     ready: function(){
         APP.filterEvents('featured-event') ;
@@ -46,6 +50,10 @@ Vue.component('featured', {
 });
 
 Vue.component('tallslide', {
+    template: require("./tallslide.html"),
+});
+
+Vue.component('tallslide2', {
     template: require("./tallslide.html"),
 });
 

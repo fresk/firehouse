@@ -88,7 +88,7 @@ Vue.filter('qrcode', function (value, size) {
 
 
 var SCRENSAVER_INTERVAL = 5000; //ms between each slide
-var SCRENSAVER_COUNTDOWN = 60; //how many "intervals" before starting screensaver
+var SCRENSAVER_COUNTDOWN = 20; //how many "intervals" before starting screensaver
 
 function setupScreenSaver(){
 
@@ -114,7 +114,7 @@ function setupScreenSaver(){
 
     setInterval(function(){
         APP.screenSaverTimer--;
-        console.log("screensaver countdown:", APP.screenSaverTimer);
+        //console.log("screensaver countdown:", APP.screenSaverTimer);
         if (APP.screenSaverTimer <= 0){
             console.log("starting screensaver");
             APP.screenSaverActive = true;
@@ -177,12 +177,18 @@ window.APP = new Vue({
 
         showFeaturedEvent: function(event){
             APP.currentEvent = event;
-            APP.currentScreen = 'event-detail-featured';
+            if (APP.currentScreen == 'event-detail-featured')
+                APP.currentScreen = 'event-detail-featured2';
+            else
+                APP.currentScreen = 'event-detail-featured';
         },
 
         showTallSlide: function(tallslide){
             APP.currentTallSlide = tallslide;
-            APP.currentScreen = 'tallslide';
+            if (APP.currentScreen == 'tallslide')
+                APP.currentScreen = 'tallslide2';
+            else
+                APP.currentScreen = 'tallslide';
         },
 
         filterEvents: function(category){

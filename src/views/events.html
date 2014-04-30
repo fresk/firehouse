@@ -2,7 +2,7 @@
 <button class="backtohome" v-on="click: currentScreen = 'home'">&#9776;</button>
 
 <div v-component='dropdown' class="event-filter-wrap">
-  <h2 v-component v-transition>{{categoryFilterName}}</h2>
+  <h2>{{categoryFilterName}}</h2>
   <button class="dropdown-arrow" v-on="click: show = !show"></button>
    <ul class="event-filters" v-if="show" v-transition>
 		
