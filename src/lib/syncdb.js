@@ -77,7 +77,7 @@ function fetchTallSlides(callback){
   request(screen_tallslides_url, function(res){
     var posts = res.body.posts;
     var modules = _.map(posts, function(p){
-        console.log(p);
+        //console.log(p);
         var module = {
             'name': p['title'],
             'content': p['content'],
