@@ -1,0 +1,14 @@
+{
+  "name": "firehouse-boot",
+  "version": "0.0.1",
+  "main": "index.html",
+  "window": {
+    "toolbar": true,
+    "width": 506,
+    "height": 900,
+    "always-on-top": false
+  },
+  "webkit": {
+    "plugin": true
+  }
+}

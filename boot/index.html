@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;  
+      -webkit-tap-highlight-color: none;      
+      -webkit-overflow-scrolling: touch;
+       margin: 0;
+      padding:0;
+      cursor: none;
+    }
+
+    html {
+      overflow: hidden; 
+    }
+
+    body {
+      overflow: hidden;
+      background: #333; 
+    }
+
+    iframe {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      perspective: 500px;
+       border: o;
+       margin:0;
+       padding: 0;
+       overflow: hidden;
+    }  
+  
+    iframe::-webkit-scrollbar {  
+      display: none;
+    }  
+  
+  </style>
+  <title>firehouse</title>
+</head>
+<body>
+  <iframe  scrolling="no" src="http://localhost:7000"></iframe>
+  <script src="js/jquery.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

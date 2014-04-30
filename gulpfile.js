@@ -16,9 +16,11 @@ var cache      = require('gulp-cache');
 var notify     = require('gulp-notify');
 var connect    = require('gulp-connect');
 var watch      = require('gulp-watch');
+var git        = require('gulp-git');
 
 
 var env = process.env.NODE_ENV;
+module.exports = gulp;
 
 // default task
 gulp.task('default', ['build', 'connect', 'watch']);
@@ -29,6 +31,10 @@ gulp.task('clean', function() {
     .pipe(clean());
 });
 
+
+gulp.task('git-pull', function(){
+  git.pull('origin', 'master', {args: '--rebase'});
+});
 
 
 // build tasks ///////////////////////////////////////////////
@@ -70,7 +76,7 @@ gulp.task('styles', function() {
   return gulp.src('src/index.styl')
     .pipe(stylus(stylus_options))
     .on('error', handleErrors)
-    .pipe(minifycss(minify_options))
+    //.pipe(minifycss(minify_options))
     .pipe(rename('index.css'))
     .pipe(gulp.dest('dist/'))
 });
@@ -105,11 +111,11 @@ gulp.task('syncdb', function(cb) {
 // images
 gulp.task('images', function(){
   return gulp.src('src/img/**/*')
-    .pipe(cache(imagemin({
-      optimizationLevel: 3,
-      progressive: true,
-      interlaced: true
-    }))).on('error', handleErrors)
+    //.pipe(cache(imagemin({
+    //  optimizationLevel: 3,
+    //  progressive: true,
+    //  interlaced: true
+    //}))).on('error', handleErrors)
     .pipe(gulp.dest('dist/img'))
 });
 
@@ -142,6 +148,31 @@ gulp.task('watch', ['build'], function() {
     gulp.watch('dist/**/*', ['reload']);
 });
 
+
+
+
+var Service = require('./boot/node-mac').Service;
+var service = new Service({
+  name:'dmsc-screens',
+  script: __dirname+'/boot/boot.js',
+  logpath: __dirname+'/boot'
+});
+service.root = process.env.HOME+"/Library/LaunchAgents";
+
+
+// clean
+gulp.task('install', function() {
+    service.install()
+});
+gulp.task('uninstall', function() {
+    service.uninstall()
+});
+gulp.task('start', function() {
+    service.start()
+});
+gulp.task('stop', function() {
+    service.stop()
+});
 
 
 

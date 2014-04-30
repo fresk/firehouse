@@ -1,92 +1,6 @@
 {
   "events": [
     {
-      "id": "1014",
-      "name": "Lunch Hour Yoga",
-      "start": 1398772800,
-      "end": 1398775500,
-      "start_date": "Apr 29",
-      "start_date_alt": "Tuesday, Apr 29",
-      "end_date": "Apr 29",
-      "start_time": "12:45PM",
-      "end_time": "12:45PM",
-      "all_day": false,
-      "status": "publish",
-      "image": "http://desmoinessocialclub.org/wp-content/uploads/2014/03/lunchyogaimage.png",
-      "content": "<span style=\"font-size: 14px; line-height: 1.5em;\"><strong>Tuesdays and Thursdays beginning April 10</strong></span>\n\n<b>Times:</b> 12:00 – 12:45pm\n\n<b>Cost:</b> $10 drop-in, 5 for $45, or 10 for $80\n\n<b>Students Should Bring: </b>Yoga Mats<b></b>\n\n<b>Registration: </b>Drop-in payment at door only.   Five and Ten Class Packs available at door or by clicking \"Buy Tickets\" at the top of this page.\n\n<b>Description</b>: Join us on your lunch hour for a rejuvenating 45 minute yoga session. Geared toward all levels, this class is intended to wake up your senses and energize you for the afternoon.\n\n<b>Instructors:</b>  Elise Goodmann (Tuesdays), Mary Lasky (Thursdays)\n\n<b>Questions? </b>Email education@desmoinessocialclub.org",
-      "ticket_url": "http://midwestix.securemytix.com/event/LunchHourYoga",
-      "time_span": "12:45PM",
-      "categories": [
-        {
-          "name": "Dance/Movement",
-          "id": 54,
-          "slug": "dancemovement"
-        },
-        {
-          "name": "Education",
-          "id": 8,
-          "slug": "education"
-        }
-      ],
-      "recurrence_id": "1008",
-      "recurrence_recurrence": 0,
-      "recurrence_interval": "1",
-      "recurrence_frequency": "weekly",
-      "recurrence_byday": "2,4",
-      "recurrence_days": "0",
-      "recurrence_byweekno": "1",
-      "location_name": "Firehouse",
-      "location_id": "29",
-      "location_address": "900 Mulberry Street",
-      "location_city": "Des Moines",
-      "location_zip": "50309",
-      "location_lat": "41.5839483",
-      "location_lng": "-93.62847069999998"
-    },
-    {
-      "id": "1251",
-      "name": "Opera Eight presents \"Love me, Love me not?\"",
-      "start": 1398798000,
-      "end": 1398805200,
-      "start_date": "Apr 29",
-      "start_date_alt": "Tuesday, Apr 29",
-      "end_date": "Apr 29",
-      "start_time": " 9:00PM",
-      "end_time": " 9:00PM",
-      "all_day": false,
-      "status": "publish",
-      "image": null,
-      "content": "\"love me...love me not?\" is the question of the evening, and singers from City Voices, a community-<wbr />centered, after-school, tuition-free music program providing vocal instruction to urban students with financial need in the neighborhood in which they live, will perform art song literature, light arias, and musical theater selections based on that theme. Music will be interspersed with student-written trivia and games - audience participation is requested! A free will donation will be taken, with proceeds benefiting City Voices.<br/><br/>The salon is presented in conjunction with Opera Eight, a Des Moines-based vocal arts collective that hosts monthly salons – casual events where singers can try out new material, meet other artists/music enthusiasts, and enjoy the craft.  Our mission is to create \"operatunities\" for Midwestern singers while creating community through the shared enjoyment of live opera and art song. We believe that opera is a diverse artistic medium relevant to people of all ages and backgrounds, especially when audience members are encouraged to participate in the experience and have fun!<br/><div>Throughout this process, Opera Eight member-singers collaborated with City Voices students, mentoring them as they chose a theme, created original content, programmed the salon, and put together marketing and print materials.</div><br/><div></div><br/><div>This event is free and all ages.</div>",
-      "ticket_url": null,
-      "time_span": " 9:00PM",
-      "categories": [
-        {
-          "name": "Music",
-          "id": 5,
-          "slug": "music"
-        },
-        {
-          "name": "Theater",
-          "id": 2,
-          "slug": "theater"
-        }
-      ],
-      "recurrence_id": "",
-      "recurrence_recurrence": 0,
-      "recurrence_interval": "",
-      "recurrence_frequency": "",
-      "recurrence_byday": "",
-      "recurrence_days": "0",
-      "recurrence_byweekno": "",
-      "location_name": "Kum&Go Theater",
-      "location_id": "1",
-      "location_address": "900 Mulberry St",
-      "location_city": "Des Moines",
-      "location_zip": "50309",
-      "location_lat": "41.5833099",
-      "location_lng": "-93.6278969"
-    },
-    {
       "id": "938",
       "name": "Yoga I and II",
       "start": 1398816000,
@@ -17397,20 +17311,25 @@
     }
   },
   "tallslides": {
+    "byrne-quote": {
+      "name": "David Byrne Quote",
+      "content": "<h3 style=\"padding: 400px 50px 50px 50px;font-size:100px; line-height:100px; color:#fff; letter-spacing: -1px; font-family: Helvetica;text-align:left;\"> <span style=\"font-weight:200;\">&#8220;It may not be cool, but it might be beyond cool.</span><br /> Here among the winding creeks and fields of corn they may have arrived at some kind of secret satisfaction.&#8221;</p>\n<p><span style=\"font-weight:200;\">David Byrne</span></h3>\n",
+      "slug": "byrne-quote"
+    },
     "dmsc-shadow-poster": {
-      "name": "DMSC Shadow Poster",
+      "name": "Everyone&#8217;s a member.",
       "content": "<p><iframe width=\"1080\" height=\"1920\" src=\"http://fresksite.net/dmscscreens/posters/index.html?t=123\" scrolling=\"no\" frameborder=\"0\" style=\"border: 0px none transparent;\"></iframe></p>\n",
       "slug": "dmsc-shadow-poster"
     },
     "slide2": {
-      "name": "Slide2",
+      "name": "Keep Des Moines Cool",
       "content": "",
       "slug": "slide2",
       "image": "http://desmoinessocialclub.org/wp-content/uploads/2014/03/nr2.jpg"
     },
     "slide1": {
-      "name": "Slide1",
-      "content": "",
+      "name": "David Byrne Keynote Speech",
+      "content": "<div class=\"blackbox\">\n<h1>David Byrne @ DMSC</h1>\n<h1 style=\"font-weight:300\">Grand Opening Keynote Speaker</h1>\n</div>\n",
       "slug": "slide1",
       "image": "http://desmoinessocialclub.org/wp-content/uploads/2014/03/nr1.jpg"
     }
