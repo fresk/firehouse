@@ -78,6 +78,9 @@ p.large {font-size: 2.5em; padding: 0; margin: 0; line-height: 0.9em;}
 a {color: #eb5f7d; text-decoration: none;}
 a:hover {color: #fff;text-decoration: none;}
 
+.light {font-weight: 200;}
+.bold {font-weight: 700;}
+
 button, a {outline: none;}
 
 iframe {border: none;}
@@ -235,6 +238,12 @@ ul.event-list li {
 
 .event-list-name-wrap {position: absolute; padding-right: 50px; max-width: 750px;}
 span.event-list-name {font-size: 3.5em; margin: 0 0 0 0; padding: 0 0 0 0; line-height: 0.8em; font-weight: 500;}
+
+.event-list-name-wrap-featured {position: absolute; padding: 50px 50px 0 ; max-width: 1000px;}
+span.event-list-name-featured {font-size: 4em; margin: 0 0 0 0; padding: 0 0 0 0; line-height: 0.8em; font-weight: 300;}
+
+li.event-list-featured-li {border-top: 2px solid #666;}
+
 ul.event-list li span.event-list-info-wrap {float: right; clear: both; line-height: 0.9em;text-align: right; margin: 0; padding: 0;}
 ul.event-list li span.event-list-date {font-weight: 300; font-size: 4em;line-height: 0.5em;}
 ul.event-list li span.event-list-time {font-weight: 300;font-size: 2em; line-height: 1.4em;}
@@ -266,6 +275,18 @@ span.ticket_url_info {float: left; color: #111; font-size: 1.2em; font-weight: 3
 span.ticket_url_info_sub {font-size: 0.35em;}
 span.ticket_url_qr {float: right;}
 
+
+.event-single-content-inner-featured {position: relative;background: none; padding: 30px 50px 30px 50px; margin: 215px 0 0 0;height:1860px;}
+.event-single-content-inner-featured h2 {font-size: 15em; font-weight: 200; color: #ebebeb; margin: 0 0 10px 0; padding: 0.3em 0 0em 0; line-height: 0.8em; letter-spacing: -2px; text-shadow: 3px 3px 1px #666; }
+
+ul.event-single-info-featured {list-style: none; font-size: 4.5em; font-weight: bold; clear: both; margin: 0; padding: 10px 0 10px 0; float: left; letter-spacing: -3px;}
+ul.event-single-info-featured li {margin: 0 20px 0 0; float: left;text-shadow: 1px 1px 1px #666; }
+ul.event-single-info-featured li.event-single-times {font-weight: 300;}
+ul.event-single-info-featured li.location {font-weight: 300;}
+ul.event-single-info-featured li.ticket_url {width: 100%; background: #fff; margin: 50px 0 0 0 ;}
+ul.event-single-info-featured li.ticket_url img {max-width: 100px; margin: 0; padding: 0; float: right;}
+
+span.featured-legend {font-size: 0.4em; clear: both;font-weight: 200; letter-spacing: normal; opacity: 0.3;}
 
 .event-content {clear: both; text-align: left;}
 

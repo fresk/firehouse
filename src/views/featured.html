@@ -12,20 +12,20 @@
 
  <ul class="event-list">
 
-  <li v-repeat="events" v-on="tap: showFeaturedEvent(this)" class="{{categories[0].slug}}-border-top">
+  <li v-repeat="events" v-on="tap: showFeaturedEvent(this)" class="event-list-featured-li">
   	<span class="event-list-info-wrap">
-  		<span class="event-list-date">{{start_date}}</span><br><span class="event-list-time">{{start_time}}</span><br>
+  		<!--<span class="event-list-date">{{start_date}}</span><br><span class="event-list-time">{{start_time}}</span><br>
   		<span class="event-list-category {{categories[0].slug}}-color">{{categories[0].name}}</span><br>
-  		<span class="event-list-location">{{location_name}}</span>
+  		<span class="event-list-location">{{location_name}}</span>-->
   	</span>
-  	<div class="event-list-name-wrap">
-    	<span class="event-list-name">{{name}}</span>
+  	<div class="event-list-name-wrap-featured">
+    	<span class="event-list-name-featured">{{name}}</span>
   	</div>
   </li>
 
-  <li v-repeat="featuredSlides"  v-on="tap: showTallSlide(this)" class="tallslide-wrap">
-  	<div class="event-list-name-wrap">
-    	<span class="event-list-name">{{name}}</span>
+  <li v-repeat="featuredSlides"  v-on="tap: showTallSlide(this)" class="tallslide-wrap event-list-featured-li">
+  	<div class="event-list-name-wrap-featured">
+    	<span class="event-list-name-featured">{{name}}</span>
   	</div>  
   </li>
 

@@ -5,7 +5,7 @@
     <div v-component v-with="currentEvent" class="{{categories[0].slug}}">
     
     <div class="event-single-content">
-    <div class="event-single-content-inner">
+    <div class="event-single-content-inner-featured">
       <h2 class="name {{categories[0].slug}}-border-bottom">{{name}}</h2>
       
 	  <!--<ul class="event-single-categories" v-repeat="categories">
@@ -13,13 +13,15 @@
 	  </ul>-->
 	  
 	  <!-- <img src="{{image}}" /> -->
-      <ul class="event-single-info">
-		  	<li class="start_date">{{start_date_alt}}</li>
-		  	<li>&bull;</li>
+      <ul class="event-single-info-featured">
+		  	<li class="start_date"><span class="featured-legend">EVENT INFO<br></span>{{start_date_alt}} &bull; <span class="light">{{start_time}}</span></li>
+		  	<li class="location"><span class="light">at the </span><span class="bold"> {{location_name}}</span></li>
+		  	
+		  	<li>{{slug}}</li>
 		  	<!--<div class="end_date">{{end_date}}</div>-->
-		  	<li class="event-single-times">{{start_time}} <!--- {{end_time}}--></li>
-		  	<li>&bull;</li>
-		  	<li class="location">{{location_name}}</li>
+      </ul>
+      <!-- <ul class="event-single-info-featured">
+		  	
 	      	<li class="ticket_url" v-if='ticket_url'>
 			  	<span class="ticket_url_info">Buy Tickets Now <br>
 			  	<span class="ticket_url_info_sub">Visit {{ticket_url}} or scan this QR code:</span></span>
@@ -27,7 +29,7 @@
 			</li>
 	  </ul>
       <div class="event-content">
-        <p>{{{content}}}</p>
+      <p>{{{content}}}</p>-->
       </div>
     </div> <!-- // end .event-single-content // --> 
     </div> <!-- // end .event-single-content-inner // --> 
