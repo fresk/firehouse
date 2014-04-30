@@ -142,7 +142,7 @@ gulp.task('watch', ['build'], function() {
     gulp.watch('src/**/*.js', ['browserify']);
     gulp.watch('src/**/*.json', ['browserify']);
     gulp.watch('src/**/*.styl', ['styles']);
-    gulp.watch('src/img/**/*', ['images']);
+    //gulp.watch('src/img/**/*', ['images']);
     gulp.watch('src/lib/**/*', ['lib']);
     gulp.watch('src/css/**/*', ['css']);
     gulp.watch('dist/**/*', ['reload']);

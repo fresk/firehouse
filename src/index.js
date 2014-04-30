@@ -3,6 +3,12 @@ var Vue = require('vue');
 //var sync = require("./lib/syncdb");
 //Vue.use(require('./lib/vue-tuio'));
 
+
+//#TODO
+// title on event list
+//
+
+
 Vue.directive('scroll', {
 
     bind: function () {
@@ -35,15 +41,15 @@ Vue.directive('scroll', {
 
 
 var _filterEvents = function(value){
-     filter_categories = _.rest(arguments);
-    this.categoryFilter;
+    //this.categoryFilter;
 
     //console.log('filter', filter_categories, this.categoryFilter)
-    if (this.categoryFilter){
-     filter_categories.push(this.categoryFilter);
-    }
+    //if (this.categoryFilter){
+    // filter_categories.push(this.categoryFilter);
+    //}
 
     //console.log(filter_categories);
+    filter_categories = _.rest(arguments);
     if (filter_categories.length == 0)
         return value;
 
@@ -78,7 +84,6 @@ Vue.filter('qrcode', function (value, size) {
     url += "cht=qr&chl="+encodeURIComponent(value);
     return url;
 })
-
 
 
 
@@ -137,30 +142,33 @@ window.APP = new Vue({
       'events': DB.events,
       'sponsors': DB.sponsors,
       'modules': DB.modules,
+      'categories': DB.categories,
       'tallslides': DB.tallslides,
+      'featuredSlides': [],
       'currentEvent': {},
       'currentTallSlide': {},
       'categoryFilter': "",
+      'categoryFilterName': "Upcoming Events",
       'screenSaverActive': false,
       'screenSaverTimer': SCRENSAVER_COUNTDOWN,
     },
 
     ready: function(){
+        this.featuredSlides = _.filter(this.tallslides, function(slide){
+            console.log("SLIDE", slide);
+            return !(slide['excludeFromFeatured']);
+        });
+
         setTimeout(setupScreenSaver, 1000);
+        $('.video-bg').videoBG({
+            webm:this.modules['background-video'].video,
+            scale:true,
+        });
 
     },
 
     methods: {
-        syncDB: function(){
-            window.DB = sync.syndb();
-            this.locations = DB.locations;
-            this.sponsors = DB.sponsors;
-            this.modules = DB.modules;
-            this.tallslides = DB.tallslides;
-            this.events = DB.events;
-            this.categoryFilter = "";
-            this.currentScreen = "home";
-        },
+
 
         showEvent: function(event){
             APP.currentEvent = event;
@@ -178,14 +186,18 @@ window.APP = new Vue({
         },
 
         filterEvents: function(category){
+            console.log("CATEGORY", category);
             if (category == "" || category == "all" || !category){
                 APP.events = DB.events;
+                APP.categoryFilterName  = "Upcoming Events"
                 return;
             }
             APP.events = _.filter(DB.events, function(item){
                 var it = _.pluck(item.categories, 'slug');
                 return _.contains(it, category)
             });
+            APP.categoryFilterName  = APP.categories[category].name;
+            console.log( APP.categoryFilterName, APP.categories[category], APP.categories);
             Vue.nextTick(function(){updateScrollers()});
         }
     }
@@ -212,14 +224,14 @@ $(window).on('hashchange', function() {
 function updateScrollers(){
     walkTheDOM(document, function(node){
         if (node._iscroll){
-            setTimeout(function(){
-                //console.log("updateng a scroller");
-                node._iscroll.refresh();
-            }, 700);
+            node._iscroll.refresh();
         }
     });
 }
 
+
+
+setInterval(function(){updateScrollers()}, 3000);
 
 function walkTheDOM(node, func) {
     func(node);

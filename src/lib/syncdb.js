@@ -60,6 +60,12 @@ function fetchScreenModules(callback){
         if (p['attachments'].length > 0){
             module['image'] =  p['attachments'][0]['images']['full']['url'];
         }
+
+        if (p['custom_fields'] && p['custom_fields'] ['backgroundVideo']  ){
+            module['video'] = p['custom_fields'] ['backgroundVideo'];
+
+        }
+
         return module;
     });
     var mods = {};
@@ -72,6 +78,14 @@ function fetchScreenModules(callback){
 
 
 
+function checkExclude(tags){
+    for (var i=0; i<tags.length; i++){
+        if (tags[0].slug == "excludefromfeatured")
+            return true;
+    }
+    return false;
+}
+
 function fetchTallSlides(callback){
   console.log("fetching tallslides from dmsc.fresk.io...");
   request(screen_tallslides_url, function(res){
@@ -81,7 +95,8 @@ function fetchTallSlides(callback){
         var module = {
             'name': p['title'],
             'content': p['content'],
-            'slug': p['slug']
+            'slug': p['slug'],
+            'excludeFromFeatured': checkExclude(p['tags'])
         };
         if (p['thumbnail_images'] && p['thumbnail_images']['full'] ){
             module['image'] =  p['thumbnail_images']['full']['url'];
@@ -139,6 +154,27 @@ exports.syncdb = function(cb){
       modules: results.modules,
       tallslides: results.tallslides
     };
+
+     db.categories = {};
+     _.forEach(db.events, function(event){
+        for (var i=0; i< event.categories.length; i++){
+            var c = event.categories[i];
+            if(db.categories[c.slug] == undefined){
+                db.categories[c.slug] = {
+                    'name': c.name,
+                    'id': c.id,
+                    'slug': c.slug,
+                    'count': 1
+                };
+            }
+            else{
+                db.categories[c.slug].count += 1;
+            }
+        }
+     })
+
+
+
     console.log("writing: db.json");
     jsonfile.writeFileSync(__dirname+"/../db.json", db);
     if (cb) cb(null, db);
