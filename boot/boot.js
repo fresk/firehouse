@@ -17,7 +17,9 @@ socket.on('connect', function(){
     socket.on('screens', function(data){
         console.log("SCREENS:", data)
         if (data == "syncdb") {
-            gulp.start("build")
+            gulp.start("syncdb", function(cb){
+                gulp.start("build");
+            })
         }
         if (data == "reboot"){
             console.log("reboot")
