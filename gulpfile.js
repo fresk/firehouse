@@ -34,9 +34,7 @@ gulp.task('clean', function() {
 
 gulp.task('git-pull', function(){
   git.pull('origin', 'master', {args: '--rebase'}, function(err){
-    gulp.start('build').on('stop', function(){
-        gulp.start('restart');
-    });
+    gulp.start('build');
   });
 });
 
@@ -178,7 +176,7 @@ gulp.task('stop', function() {
 
 gulp.task('restart', function() {
     service.stop()
-    service.start()
+     service.stop()
 });
 
 
