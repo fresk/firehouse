@@ -77,13 +77,14 @@ function fetchTallSlides(callback){
   request(screen_tallslides_url, function(res){
     var posts = res.body.posts;
     var modules = _.map(posts, function(p){
+        console.log(p);
         var module = {
             'name': p['title'],
             'content': p['content'],
             'slug': p['slug']
         };
-        if (p['attachments'].length > 0){
-            module['image'] =  p['attachments'][0]['images']['full']['url'];
+        if (p['thumbnail_images'].length > 0){
+            module['image'] =  p['thumbnail_images']['full']['url'];
         }
         return module;
     });

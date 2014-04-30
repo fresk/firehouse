@@ -17317,7 +17317,7 @@
       "slug": "byrne-quote"
     },
     "dmsc-shadow-poster": {
-      "name": "Everyone&#8217;s a member.",
+      "name": "Everyone is a member.",
       "content": "<p><iframe width=\"1080\" height=\"1920\" src=\"http://fresksite.net/dmscscreens/posters/index.html?t=123\" scrolling=\"no\" frameborder=\"0\" style=\"border: 0px none transparent;\"></iframe></p>\n",
       "slug": "dmsc-shadow-poster"
     },
@@ -17326,12 +17326,6 @@
       "content": "",
       "slug": "slide2",
       "image": "http://desmoinessocialclub.org/wp-content/uploads/2014/03/nr2.jpg"
-    },
-    "slide1": {
-      "name": "David Byrne Keynote Speech",
-      "content": "<div class=\"blackbox\">\n<h1>David Byrne @ DMSC</h1>\n<h1 style=\"font-weight:300\">Grand Opening Keynote Speaker</h1>\n</div>\n",
-      "slug": "slide1",
-      "image": "http://desmoinessocialclub.org/wp-content/uploads/2014/03/nr1.jpg"
     }
   }
 }
