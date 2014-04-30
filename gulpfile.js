@@ -33,7 +33,9 @@ gulp.task('clean', function() {
 
 
 gulp.task('git-pull', function(){
-  git.pull('origin', 'master', {args: '--rebase'});
+  git.pull('origin', 'master', {args: '--rebase'}, function(err){
+    gulp.start('build');
+  });
 });
 
 
