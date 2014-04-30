@@ -5,7 +5,7 @@
   <button class="dropdown-arrow" v-on="click: show = !show"></button>
    <ul class="event-filters" v-if="show" v-transition>
 		
-		<li class="upcoming"><a class="bytime" href="#">All Upcoming Events</a></li>
+		<li class="upcoming"><a v-on="click: setFilter('all')" class="bytime" href="#">All Upcoming Events</a></li>
 
 		
 		

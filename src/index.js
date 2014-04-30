@@ -186,7 +186,7 @@ window.APP = new Vue({
                 var it = _.pluck(item.categories, 'slug');
                 return _.contains(it, category)
             });
-            updateScrollers();
+            Vue.nextTick(function(){updateScrollers()});
         }
     }
 
@@ -215,9 +215,9 @@ function updateScrollers(){
             setTimeout(function(){
                 //console.log("updateng a scroller");
                 node._iscroll.refresh();
-            }, 500);
+            }, 700);
         }
-    })
+    });
 }
 
 
