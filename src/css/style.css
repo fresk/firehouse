@@ -91,6 +91,7 @@ iframe {border: none;}
 .page-content {padding: 240px 40px 40px 40px; font-size: 1.6em; line-height: 1.7em; width: 1080px; float: left;}
 .page-content-top {font-size: 2.2em; line-height: 0.9em; font-weight: 100;}
 .page-content-alt {padding: 240px 0 50px 0;font-size: 1.5em; line-height: 1.7em; width: 1080px; float: left; padding: 10px 50px;}
+.page-content-inner {background-color: rgba(0,0,0,0.9); padding: 50px;}
 
 #logo {position: fixed; top: 20px; left: 20px;}
 
@@ -239,7 +240,7 @@ ul.event-list li {
 .event-list-name-wrap {position: absolute; padding-right: 50px; max-width: 750px;}
 span.event-list-name {font-size: 3.5em; margin: 0 0 0 0; padding: 0 0 0 0; line-height: 0.8em; font-weight: 500;}
 
-.event-list-name-wrap-featured {position: absolute; padding: 50px 50px 0 ; max-width: 1000px;}
+.event-list-name-wrap-featured {position: absolute; padding: 30px 50px 0 ; max-width: 1000px;}
 span.event-list-name-featured {font-size: 4em; margin: 0 0 0 0; padding: 0 0 0 0; line-height: 0.8em; font-weight: 300;}
 
 li.event-list-featured-li {border-top: 2px solid #666;}
@@ -276,7 +277,7 @@ span.ticket_url_info_sub {font-size: 0.35em;}
 span.ticket_url_qr {float: right;}
 
 
-.event-single-content-inner-featured {position: relative;background: none; padding: 30px 50px 30px 50px; margin: 215px 0 0 0;height:1860px;}
+.event-single-content-inner-featured {position: relative;background: none; padding: 30px 50px 30px 50px; margin: 215px 0 0 0;height:1860px; background-color: rgba (0,0,0,0.9);}
 .event-single-content-inner-featured h2 {font-size: 15em; font-weight: 200; color: #ebebeb; margin: 0 0 10px 0; padding: 0.3em 0 0em 0; line-height: 0.8em; letter-spacing: -2px; text-shadow: 3px 3px 1px #666; }
 
 ul.event-single-info-featured {list-style: none; font-size: 4.5em; font-weight: bold; clear: both; margin: 0; padding: 10px 0 10px 0; float: left; letter-spacing: -3px;}
@@ -329,6 +330,7 @@ ul.sponsors-list-level2 {margin-left: 100px;}
 .dancemovement {background: #a65667;}
 .circus {background: #6957a0;}
 .education {background:#a3d39d;}
+.featured-event {background: #e9617e;}
 
 .visual-art-color {color: #35b6c2;}
 .music-color {color: #cd4339;}
@@ -341,6 +343,7 @@ ul.sponsors-list-level2 {margin-left: 100px;}
 .dancemovement-color {color: #a65667;}
 .circus-color {color: #6957a0;}
 .education-color {color:#a3d39d;}
+.featured-event-color {color: #e9617e;}
 
 .visual-art-border-bottom {border-bottom: 2px solid #35b6c2;}
 .music-border-bottom {border-bottom: 2px solid #cd4339;}
@@ -353,6 +356,7 @@ ul.sponsors-list-level2 {margin-left: 100px;}
 .dancemovement-border-bottom {border-bottom: 2px solid #a65667;}
 .circus-border-bottom {border-bottom: 2px solid #6957a0;}
 .education-border-bottom {border-bottom: 2px solid #a3d39d;}
+.featured-event-border-bottom {border-bottom: 2px solid #e9617e;}
 
 .visual-art-border-top {border-top: 2px solid #35b6c2;}
 .music-border-top {border-top: 2px solid #cd4339;}
@@ -365,7 +369,7 @@ ul.sponsors-list-level2 {margin-left: 100px;}
 .dancemovement-border-top {border-top: 2px solid #a65667;}
 .circus-border-top {border-top: 2px solid #6957a0;}
 .education-border-top {border-top: 2px solid #a3d39d;}
-
+.featured-event-border-top {border-top: 2px solid #e9617e;}
 
 
 /* ////// ANIMATIONS /////// */
