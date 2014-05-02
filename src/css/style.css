@@ -74,7 +74,7 @@ h4 {font-size: 2.5em; text-align: left; padding: 0.8em 0 0.2em 0; font-weight: 4
 h1.page-title {font-size: 3em; text-align: right; font-weight: 100; text-transform: uppercase; padding: 50px 50px 25px 25px; position: fixed; top:50px; right:50px;}
 h1#page-title-alt {font-size: 3em; text-align: right; font-weight: 100; text-transform: uppercase; padding: 50px 50px 25px 25px; position: fixed; top:50px; right:50px;}
 
-p {}
+p { font-size: 1.2em; margin-bottom: 15px;}
 p.large {font-size: 2.5em; padding: 0; margin: 0; line-height: 0.9em;}
 
 a {color: #eb5f7d; text-decoration: none;}

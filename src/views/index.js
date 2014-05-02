@@ -67,6 +67,10 @@ Vue.component('about', {
     template: require("./about.html"),
 });
 
+Vue.component('ourstory', {
+    template: require("./ourstory.html"),
+});
+
 
 Vue.component('map', {
     template: require("./map.html"),
