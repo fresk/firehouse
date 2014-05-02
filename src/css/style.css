@@ -473,3 +473,33 @@ a img.aligncenter {
     margin: 0;
     padding: 0 4px 5px;
 }
+
+
+
+
+.screensaver {
+    position: absolute;
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;  
+    border: 0 px;
+
+}
+
+
+.screensaver-cover {
+    position: absolute;
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;  
+    background: rgba(255,255,255,0.01);
+    border: 0 px;
+}
+
+
+.screensaver iframe {
+    border: 0;
+    position: absolute;
+    width: 1080px;
+    height: 1920px;
+}

@@ -16,6 +16,11 @@ Vue.component('dropdown', {
 
 
 
+Vue.component('screenSaver', {
+    template: require("./screensaver.html"),
+});
+
+
 Vue.component('home', {
     template: require("./home.html"),
 });

@@ -1,45 +1,7 @@
-<div>
-<button class="backtohome" v-on="click: currentScreen = 'home'">&#9776;</button>
-
-<div class="page-header">
-	<h1 class="page-title">Featured</h1>
-</div>
-
-
-<div class="app-screen" v-scroll>
-
-
-
- <ul class="event-list">
-
-  <li v-repeat="events" v-on="tap: showFeaturedEvent(this)" class="{{categories[0].slug}}-border-top">
-  	<span class="event-list-info-wrap">
-  		<span class="event-list-date">{{start_date}}</span><br><span class="event-list-time">{{start_time}}</span><br>
-  		<span class="event-list-category {{categories[0].slug}}-color">{{categories[0].name}}</span><br>
-  		<span class="event-list-location">{{location_name}}</span>
-  	</span>
-  	<div class="event-list-name-wrap">
-    	<span class="event-list-name">{{name}}</span>
-  	</div>
-  </li>
-
-  <li v-repeat="tallslides"  v-on="tap: showTallSlide(this)" class="tallslide-wrap">
-    <div class="tallslide-title">{{name}}</div>
-    
-  </li>
-
-
-
- </ul>
-
- </div>
-
-</div>   
-
-
+<div class="screensaver">
+<iframe src="http://desmoinessocialclub.org/signagetall" width="1080" height="1920" scrolling="no"></iframe>
+<div class="screensaver-cover"></div>
+</div>                                  
  
-
-                        
  
-
 

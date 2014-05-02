@@ -87,48 +87,12 @@ Vue.filter('qrcode', function (value, size) {
 
 
 
-var SCRENSAVER_INTERVAL = 5000; //ms between each slide
-var SCRENSAVER_COUNTDOWN = 20; //how many "intervals" before starting screensaver
 
-function setupScreenSaver(){
 
-    var screenSaverSlides = [];
-    _.forEach(_filterEvents(DB.events, 'featured-event'), function(event){
-        screenSaverSlides.push({'screen': 'event-detail-featured', 'data': event});
-    });
-    _.forEach(APP.tallslides, function(slide){
-        screenSaverSlides.push({'screen': 'tallslide', 'data': slide});
-    });
 
-    var stopScreenSaver = function(){
-        if (APP.screenSaverActive){
-            console.log("stoping screensaver");
-            APP.screenSaverTimer = SCRENSAVER_COUNTDOWN;
-            APP.screenSaverActive = false
-            APP.currentScreen = 'home'
-        }
-    };
 
-    $(document).on('click', stopScreenSaver);
-    $(document).on('touchstart', stopScreenSaver);
 
-    setInterval(function(){
-        APP.screenSaverTimer--;
-        //console.log("screensaver countdown:", APP.screenSaverTimer);
-        if (APP.screenSaverTimer <= 0){
-            console.log("starting screensaver");
-            APP.screenSaverActive = true;
-            slide = _.sample(screenSaverSlides);
-            //console.log(slide);
-            if (slide.screen == 'event-detail-featured')
-                APP.showFeaturedEvent(slide.data);
-            else if (slide.screen == 'tallslide')
-                APP.showTallSlide(slide.data);
-        }
-    }, SCRENSAVER_INTERVAL);
-
-}
-
+SCREENSAVER_TIMEOUT = 5;
 
 
 require("./views");
@@ -150,7 +114,6 @@ window.APP = new Vue({
       'categoryFilter': "",
       'categoryFilterName': "Upcoming Events",
       'screenSaverActive': false,
-      'screenSaverTimer': SCRENSAVER_COUNTDOWN,
     },
 
     ready: function(){
@@ -159,7 +122,6 @@ window.APP = new Vue({
             return !(slide['excludeFromFeatured']);
         });
 
-        setTimeout(setupScreenSaver, 1000);
         $('.video-bg').videoBG({
             webm:this.modules['background-video'].video,
             scale:true,
@@ -169,6 +131,13 @@ window.APP = new Vue({
 
     methods: {
 
+        hideScreenSaver: function(){
+            console.log("hide screensaver");
+            APP.screenSaverActive = false;
+            APP.currentScreen = 'home';
+            SCREENSAVER_TIMEOUT = 5;
+
+        },
 
         showEvent: function(event){
             APP.currentEvent = event;
@@ -249,6 +218,22 @@ function walkTheDOM(node, func) {
 }
 
 
+$(document).on("click", '.screensaver-cover', function(){
+    console.log("CLICK");
+    APP.hideScreenSaver();
+})
+
+
+setInterval(function(){
+    if (APP.screenSaverActive)
+        return
+    SCREENSAVER_TIMEOUT = SCREENSAVER_TIMEOUT - 1;
+    if (SCREENSAVER_TIMEOUT < 0){
+        console.log("activating screensaver");
+        APP.screenSaverActive = true;
+        APP.currentScreen = 'screenSaver';
+    }
+}, 10000);
 
 
 
