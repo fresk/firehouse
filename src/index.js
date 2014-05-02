@@ -133,9 +133,11 @@ window.APP = new Vue({
 
         hideScreenSaver: function(){
             console.log("hide screensaver");
-            APP.screenSaverActive = false;
-            APP.currentScreen = 'home';
             SCREENSAVER_TIMEOUT = 5;
+            if (APP.screenSaverActive){
+                APP.currentScreen = 'home';
+            }
+            APP.screenSaverActive = false;
 
         },
 
@@ -222,6 +224,11 @@ $(document).on("click", '.screensaver-cover', function(){
     console.log("CLICK");
     APP.hideScreenSaver();
 })
+
+document.addEventListener('click',function(){
+    APP.hideScreenSaver();
+
+},true)
 
 
 setInterval(function(){
