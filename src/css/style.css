@@ -74,6 +74,8 @@ h4 {font-size: 2.5em; text-align: left; padding: 0.8em 0 0.2em 0; font-weight: 4
 h1.page-title {font-size: 3em; text-align: right; font-weight: 100; text-transform: uppercase; padding: 50px 50px 25px 25px; position: fixed; top:50px; right:50px;}
 h1#page-title-alt {font-size: 3em; text-align: right; font-weight: 100; text-transform: uppercase; padding: 50px 50px 25px 25px; position: fixed; top:50px; right:50px;}
 
+h3.sub-title {font-size: 3em; padding: 0 0 0.5em 0; margin: 0; line-height: 0.9em; font-weight: 200;}
+
 p { font-size: 1.2em; margin-bottom: 15px;}
 p.large {font-size: 2.5em; padding: 0; margin: 0; line-height: 0.9em;}
 
@@ -95,7 +97,7 @@ iframe {border: none;}
 .page-content-alt {padding: 240px 0 50px 0;font-size: 1.5em; line-height: 1.7em; width: 1080px; float: left; padding: 10px 50px;}
 .page-content-inner {background-color: rgba(0,0,0,0.9); padding: 50px;}
 
-#logo {position: fixed; top: 20px; left: 20px;}
+#logo {position: fixed; top: 20px; left: 20px; -webkit-animation:fromleft 0.8s 1 ease-out;}
 
 .nobg {background: none; }
 .video-bg {width: 1080px; height: 1920px; position: absolute; z-index: 0;} 
@@ -115,7 +117,7 @@ ul.menu li {
     width: 1080px;
     height: 239px; 
     margin-bottom: 10px;
-    -webkit-animation:swing 0.8s 1 ease-out;
+    -webkit-animation:fromright 0.8s 1 ease-out;
 
 
 }
@@ -376,8 +378,13 @@ ul.sponsors-list-level2 {margin-left: 100px;}
 
 /* ////// ANIMATIONS /////// */
 
-@-webkit-keyframes swing{
+@-webkit-keyframes fromright{
     0%{-webkit-transform:translateX(200px); opacity: 0;}
+    100%{-webkit-transform:translateX(0); opacity: 1.0;}
+}
+
+@-webkit-keyframes fromleft{
+    0%{-webkit-transform:translateX(-200px); opacity: 0;}
     100%{-webkit-transform:translateX(0); opacity: 1.0;}
 }
 
