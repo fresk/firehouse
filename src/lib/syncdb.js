@@ -147,8 +147,15 @@ exports.syncdb = function(cb){
       website: fetchEventsAndLocations
   },
   function(err, results) {
+
+    var filteredEvents = _.filter(results.website.events, function(ev){
+      if (ev.categories && ev.categories.length > 0)
+        return true;
+    });
+
+
      var db = {
-      events: results.website.events,
+      events: filteredEvents,
       locations: results.website.locations,
       sponsors: results.sponsors,
       modules: results.modules,
