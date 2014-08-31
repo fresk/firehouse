@@ -11,27 +11,30 @@ var Vue = require('vue');
 
 Vue.directive('scroll', {
 
-    bind: function () {
+    bind: function() {
         var self = this;
-        function refresh(){
+
+        function refresh() {
             if (self.el._iscroll)
                 self.el._iscroll.refresh();
             else
                 setTimeout(refresh, 200);
         }
-        var options = {tap: true};
+        var options = {
+            tap: true
+        };
         self.el._iscroll = new IScroll(self.el, options);
         setTimeout(refresh, 200);
     },
-    update: function (value) {
+    update: function(value) {
         // do something based on the updated value
         // this will also be called for the initial value
         //console.log("update iScroll");
         if (this.el._iscroll)
-        el._iscroll.refresh();
+            el._iscroll.refresh();
     },
-    unbind: function () {
-        if(this.el._iscroll){
+    unbind: function() {
+        if (this.el._iscroll) {
             this.el._iscroll.destroy();
             this.el._iscroll = null;
         }
@@ -40,7 +43,7 @@ Vue.directive('scroll', {
 
 
 
-var _filterEvents = function(value){
+var _filterEvents = function(value) {
     //this.categoryFilter;
 
     //console.log('filter', filter_categories, this.categoryFilter)
@@ -53,8 +56,8 @@ var _filterEvents = function(value){
     if (filter_categories.length == 0)
         return value;
 
-    return _.filter(value, function(item){
-        var item_categories = _.map(item.categories, function(i){
+    return _.filter(value, function(item) {
+        var item_categories = _.map(item.categories, function(i) {
             return i.slug;
         });
 
@@ -70,25 +73,20 @@ var _filterEvents = function(value){
 
 
 
-Vue.filter('category', function (value) {
+Vue.filter('category', function(value) {
     return _filterEvents(arguments);
 })
 
 
-Vue.filter('qrcode', function (value, size) {
-    if (!size){
+Vue.filter('qrcode', function(value, size) {
+    if (!size) {
         size = 400;
     }
     var url = "https://chart.googleapis.com/chart?chs=";
-    url += size+"x"+size+"&";
-    url += "cht=qr&chl="+encodeURIComponent(value);
+    url += size + "x" + size + "&";
+    url += "cht=qr&chl=" + encodeURIComponent(value);
     return url;
 })
-
-
-
-
-
 
 
 
@@ -102,51 +100,56 @@ window.DB = require("./db.json");
 window.APP = new Vue({
     el: '#app',
     data: {
-      'currentScreen': 'home',
-      'events': DB.events,
-      'sponsors': DB.sponsors,
-      'modules': DB.modules,
-      'categories': DB.categories,
-      'tallslides': DB.tallslides,
-      'featuredSlides': [],
-      'currentEvent': {},
-      'currentTallSlide': {},
-      'categoryFilter': "",
-      'categoryFilterName': "Upcoming Events",
-      'screenSaverActive': false,
+        'currentScreen': 'home',
+        'events': DB.events,
+        'sponsors': DB.sponsors,
+        'modules': DB.modules,
+        'categories': DB.categories,
+        'tallslides': DB.tallslides,
+        'featuredSlides': [],
+        'currentEvent': {},
+        'currentTallSlide': {},
+        'categoryFilter': "",
+        'categoryFilterName': "Upcoming Events",
+        'screenSaverActive': false,
     },
 
-    ready: function(){
-        this.featuredSlides = _.filter(this.tallslides, function(slide){
+    ready: function() {
+        this.featuredSlides = _.filter(this.tallslides, function(slide) {
             console.log("SLIDE", slide);
             return !(slide['excludeFromFeatured']);
         });
 
-        $('.video-bg').videoBG({
-            webm:this.modules['background-video'].video,
-            scale:true,
-        });
+        var videoUrl = "";
+        if (this.modules['background-video'] && this.modules['background-video'].video) {
+            videoUrl = this.modules['background-video'].video
+            $('.video-bg').videoBG({
+                webm: videoUrl,
+                scale: true,
+            });
+        }
+
 
     },
 
     methods: {
 
-        hideScreenSaver: function(){
+        hideScreenSaver: function() {
             console.log("hide screensaver");
             SCREENSAVER_TIMEOUT = 5;
-            if (APP.screenSaverActive){
+            if (APP.screenSaverActive) {
                 APP.currentScreen = 'home';
             }
             APP.screenSaverActive = false;
 
         },
 
-        showEvent: function(event){
+        showEvent: function(event) {
             APP.currentEvent = event;
             APP.currentScreen = 'event-detail';
         },
 
-        showFeaturedEvent: function(event){
+        showFeaturedEvent: function(event) {
             APP.currentEvent = event;
             if (APP.currentScreen == 'event-detail-featured')
                 APP.currentScreen = 'event-detail-featured2';
@@ -154,7 +157,7 @@ window.APP = new Vue({
                 APP.currentScreen = 'event-detail-featured';
         },
 
-        showTallSlide: function(tallslide){
+        showTallSlide: function(tallslide) {
             APP.currentTallSlide = tallslide;
             if (APP.currentScreen == 'tallslide')
                 APP.currentScreen = 'tallslide2';
@@ -162,20 +165,22 @@ window.APP = new Vue({
                 APP.currentScreen = 'tallslide';
         },
 
-        filterEvents: function(category){
+        filterEvents: function(category) {
             console.log("CATEGORY", category);
-            if (category == "" || category == "all" || !category){
+            if (category == "" || category == "all" || !category) {
                 APP.events = DB.events;
-                APP.categoryFilterName  = "Upcoming Events"
+                APP.categoryFilterName = "Upcoming Events"
                 return;
             }
-            APP.events = _.filter(DB.events, function(item){
+            APP.events = _.filter(DB.events, function(item) {
                 var it = _.pluck(item.categories, 'slug');
                 return _.contains(it, category)
             });
-            APP.categoryFilterName  = APP.categories[category].name;
-            console.log( APP.categoryFilterName, APP.categories[category], APP.categories);
-            Vue.nextTick(function(){updateScrollers()});
+            APP.categoryFilterName = APP.categories[category].name;
+            console.log(APP.categoryFilterName, APP.categories[category], APP.categories);
+            Vue.nextTick(function() {
+                updateScrollers()
+            });
         }
     }
 
@@ -186,7 +191,7 @@ window.APP = new Vue({
 
 $(window).on('hashchange', function() {
     var screenTarget = window.location.hash.substring(1);
-    if (screenTarget.length > 2){
+    if (screenTarget.length > 2) {
         if (Vue.component(screenTarget))
             APP.currentScreen = screenTarget;
         else
@@ -198,9 +203,9 @@ $(window).on('hashchange', function() {
 
 
 
-function updateScrollers(){
-    walkTheDOM(document, function(node){
-        if (node._iscroll){
+function updateScrollers() {
+    walkTheDOM(document, function(node) {
+        if (node._iscroll) {
             node._iscroll.refresh();
         }
     });
@@ -208,7 +213,9 @@ function updateScrollers(){
 
 
 
-setInterval(function(){updateScrollers()}, 3000);
+setInterval(function() {
+    updateScrollers()
+}, 3000);
 
 function walkTheDOM(node, func) {
     func(node);
@@ -220,30 +227,24 @@ function walkTheDOM(node, func) {
 }
 
 
-$(document).on("click", '.screensaver-cover', function(){
+$(document).on("click", '.screensaver-cover', function() {
     console.log("CLICK");
     APP.hideScreenSaver();
 })
 
-document.addEventListener('click',function(){
+document.addEventListener('click', function() {
     APP.hideScreenSaver();
 
-},true)
+}, true)
 
 
-setInterval(function(){
+setInterval(function() {
     if (APP.screenSaverActive)
         return
     SCREENSAVER_TIMEOUT = SCREENSAVER_TIMEOUT - 1;
-    if (SCREENSAVER_TIMEOUT < 0){
+    if (SCREENSAVER_TIMEOUT < 0) {
         console.log("activating screensaver");
         APP.screenSaverActive = true;
         APP.currentScreen = 'screenSaver';
     }
 }, 10000);
-
-
-
-
-
-
