@@ -76,8 +76,9 @@ function fetchScreenModules(callback) {
 
           if (p['custom_fields'] && p['custom_fields']['backgroundVideo']) {
             module['video'] = p['custom_fields']['backgroundVideo'];
-            return module;
+            
           }
+          return module;
         } catch (e) {
           return null
         }
